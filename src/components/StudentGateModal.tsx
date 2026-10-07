@@ -28,7 +28,7 @@ interface StudentGateModalProps {
   totalMateri?: number;
   totalGames?: number;
   totalSoal?: number;
-  onComplete: (student: { nama: string; kelas: string }, targetTab?: 'materi' | 'bermain' | 'latih') => void;
+  onComplete: (student: { nama: string; kelas: string }, targetTab?: 'dashboard' | 'materi' | 'bermain' | 'latih') => void;
   initialStudent?: { nama: string; kelas: string };
   onClose?: () => void;
   onGoToEditIdentitas?: () => void;
@@ -57,43 +57,31 @@ export const StudentGateModal: React.FC<StudentGateModalProps> = ({
 
   if (!isOpen) return null;
 
-  const handleStartLearning = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!nama.trim()) {
-      sound.playError();
-      setErrorMessage('Mohon isikan nama lengkap siswa terlebih dahulu.');
-      return;
-    }
-    if (!kelas.trim()) {
-      sound.playError();
-      setErrorMessage('Mohon isikan kelas / rombel siswa.');
-      return;
-    }
+  const handleStartLearning = (e?: React.FormEvent) => {
+    if (e) e.preventDefault();
+    const finalNama = nama.trim() || 'Peserta Didik';
+    const finalKelas = kelas.trim() || config.kelas || 'Kelas XI';
     sound.playSuccess();
     setErrorMessage('');
     onComplete({
-      nama: nama.trim(),
-      kelas: kelas.trim()
-    }, 'materi');
+      nama: finalNama,
+      kelas: finalKelas
+    }, 'dashboard');
   };
 
   const handleGoToStep2 = () => {
-    if (!nama.trim()) {
-      sound.playError();
-      setErrorMessage('Mohon isikan nama lengkap siswa terlebih dahulu.');
-      return;
-    }
+    const finalKelas = kelas.trim() || config.kelas || 'Kelas XI';
+    if (!nama.trim()) setNama('Peserta Didik');
+    if (!kelas.trim()) setKelas(finalKelas);
     sound.playSuccess();
     setErrorMessage('');
     setStep(2);
   };
 
   const handleGoToStep3 = () => {
-    if (!nama.trim()) {
-      sound.playError();
-      setErrorMessage('Mohon isikan nama lengkap siswa terlebih dahulu.');
-      return;
-    }
+    const finalKelas = kelas.trim() || config.kelas || 'Kelas XI';
+    if (!nama.trim()) setNama('Peserta Didik');
+    if (!kelas.trim()) setKelas(finalKelas);
     sound.playSuccess();
     setErrorMessage('');
     setPrereqNotice(null);
@@ -173,11 +161,21 @@ export const StudentGateModal: React.FC<StudentGateModalProps> = ({
                   }}
                   placeholder="Ketik nama lengkap Anda di sini..."
                   className="w-full px-4 py-3.5 rounded-xl border border-slate-300 text-slate-900 text-base font-bold focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 shadow-xs bg-slate-50/70"
-                  required
                 />
-                <span className="text-[11px] text-slate-400 mt-1 block">
-                  Nama Anda akan otomatis dicetak pada sertifikat &amp; kartu hasil evaluasi.
-                </span>
+                <div className="flex items-center justify-between mt-1 text-[11px]">
+                  <span className="text-slate-400">
+                    Nama Anda otomatis dicetak pada sertifikat &amp; kartu nilai.
+                  </span>
+                  {!nama && (
+                    <button
+                      type="button"
+                      onClick={() => setNama('Peserta Didik')}
+                      className="text-blue-600 hover:text-blue-700 font-bold underline"
+                    >
+                      Isi "Peserta Didik"
+                    </button>
+                  )}
+                </div>
               </div>
 
               {/* Input Kelas Siswa */}
@@ -187,7 +185,7 @@ export const StudentGateModal: React.FC<StudentGateModalProps> = ({
                   className="block text-xs font-black uppercase tracking-wider text-slate-700 mb-1.5 flex items-center gap-1.5"
                 >
                   <GraduationCap size={15} className="text-blue-600" />
-                  <span>Kelas / Rombel Siswa <span className="text-rose-500">*</span></span>
+                  <span>Kelas / Rombel Siswa</span>
                 </label>
                 <input
                   id="input-student-class"
@@ -199,7 +197,6 @@ export const StudentGateModal: React.FC<StudentGateModalProps> = ({
                   }}
                   placeholder={`Contoh: ${config.kelas || 'Kelas XI'} IPS 1`}
                   className="w-full px-4 py-3.5 rounded-xl border border-slate-300 text-slate-900 text-base font-bold focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 shadow-xs bg-slate-50/70"
-                  required
                 />
               </div>
 
@@ -699,16 +696,26 @@ export const StudentGateModal: React.FC<StudentGateModalProps> = ({
 
             {/* Quick helper footer & Direct Start Button */}
             <div className="mt-8 text-center flex flex-col items-center gap-3">
-              <button
-                type="button"
-                onClick={() => onComplete({ nama: nama.trim(), kelas: kelas.trim() }, 'materi')}
-                className="py-3.5 px-6 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-black text-sm shadow-md hover:shadow-lg transition flex items-center gap-2 cursor-pointer active:scale-98"
-              >
-                <Rocket size={16} />
-                <span>Langsung Mulai dari Modul Belajar →</span>
-              </button>
+              <div className="flex flex-wrap items-center justify-center gap-3">
+                <button
+                  type="button"
+                  onClick={() => onComplete({ nama: nama.trim(), kelas: kelas.trim() }, 'dashboard')}
+                  className="py-3.5 px-6 rounded-2xl bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 hover:from-amber-600 hover:to-orange-600 text-slate-950 font-black text-sm shadow-md hover:shadow-lg transition flex items-center gap-2 cursor-pointer active:scale-98 border border-amber-300"
+                >
+                  <Rocket size={16} />
+                  <span>🧭 Buka Dasbor Interaktif & Peta Petualangan →</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => onComplete({ nama: nama.trim(), kelas: kelas.trim() }, 'materi')}
+                  className="py-3.5 px-5 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-black text-sm shadow-md hover:shadow-lg transition flex items-center gap-2 cursor-pointer active:scale-98"
+                >
+                  <BookOpen size={16} />
+                  <span>Langsung ke Modul Belajar</span>
+                </button>
+              </div>
               <span className="text-xs text-slate-500 font-medium">
-                💡 Klik tombol di atas atau pilih kartu aktivitas untuk langsung membuka pembelajaran.
+                💡 Masuk ke Dasbor Hub untuk melihat Peta Petualangan atau pilih modul langsung.
               </span>
             </div>
 

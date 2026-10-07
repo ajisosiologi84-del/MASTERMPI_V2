@@ -919,6 +919,640 @@ export function generateStandaloneMpiHtml(
       box-shadow: 0 0 0 2px rgba(13, 148, 136, 0.3);
     }
 
+    /* =========================================================================
+       GAMIFICATION HUD BAR & REFILL HEARTS MODAL STYLES
+       ========================================================================= */
+    .gamify-hud-bar {
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-bottom: 1px solid #1e293b;
+      padding: 0.45rem 1rem;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 45;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+    .gamify-hud-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .gamify-hud-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(2, 6, 23, 0.75);
+      border: 1px solid #334155;
+      border-radius: 9999px;
+      padding: 0.25rem 0.65rem;
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.4);
+      font-size: 0.78rem;
+    }
+    .gamify-hud-pill.streak {
+      border-color: rgba(245, 158, 11, 0.35);
+      background: rgba(245, 158, 11, 0.1);
+    }
+    .gamify-hud-pill.level {
+      border-color: rgba(99, 102, 241, 0.4);
+      background: rgba(49, 46, 129, 0.6);
+    }
+    .hud-plus-btn {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: none;
+      font-size: 11px;
+      font-weight: 900;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      margin-left: 2px;
+      transition: all 0.2s;
+    }
+    .hud-plus-btn.rose {
+      background: #f43f5e;
+      color: white;
+    }
+    .hud-plus-btn.rose:hover {
+      background: #fb7185;
+      transform: scale(1.1);
+    }
+    .hud-plus-btn.amber {
+      background: #f59e0b;
+      color: #0f172a;
+    }
+    .hud-plus-btn.amber:hover {
+      background: #fbbf24;
+      transform: scale(1.1);
+    }
+    .btn-hud-action {
+      padding: 0.35rem 0.75rem;
+      border-radius: 10px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: all 0.2s;
+    }
+    .btn-hud-action.purple {
+      background: linear-gradient(135deg, #7c3aed, #4f46e5);
+      color: white;
+      box-shadow: 0 2px 6px rgba(124,58,237,0.3);
+    }
+    .btn-hud-action.purple:hover {
+      background: linear-gradient(135deg, #8b5cf6, #6366f1);
+      transform: translateY(-1px);
+    }
+    .btn-hud-action.amber {
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: #0f172a;
+      box-shadow: 0 2px 6px rgba(245,158,11,0.3);
+    }
+    .btn-hud-action.amber:hover {
+      background: linear-gradient(135deg, #fbbf24, #f59e0b);
+      transform: translateY(-1px);
+    }
+
+    /* Refill Hearts Modal */
+    .refill-hearts-card {
+      background: #0f172a;
+      border: 2px solid rgba(244, 63, 94, 0.8);
+      border-radius: 24px;
+      max-width: 440px;
+      width: 100%;
+      padding: 1.75rem;
+      color: white;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.7);
+    }
+
+    /* =========================================================================
+       DASBOR HUB INTERAKTIF & GAMIFIKASI TABLET UI STYLES
+       ========================================================================= */
+    .dashboard-top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #0f172a;
+      border-radius: 18px;
+      padding: 0.85rem 1.25rem;
+      margin-bottom: 1.25rem;
+      border: 1px solid #1e293b;
+      box-shadow: var(--shadow);
+      color: white;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .dash-title-group {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .dash-icon-box {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: #f59e0b;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      font-weight: 900;
+      flex-shrink: 0;
+      box-shadow: 0 4px 10px rgba(245,158,11,0.3);
+    }
+    .dash-frame-toggle-box {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      background: #1e293b;
+      padding: 4px;
+      border-radius: 12px;
+      border: 1px solid #334155;
+    }
+    .btn-frame-toggle {
+      background: transparent;
+      border: none;
+      color: #94a3b8;
+      padding: 0.45rem 0.9rem;
+      border-radius: 8px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.2s;
+    }
+    .btn-frame-toggle.active {
+      background: #f59e0b;
+      color: #0f172a;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    }
+    .dashboard-container {
+      width: 100%;
+      margin: 0 auto;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .dashboard-container.frame-tablet {
+      max-width: 940px;
+      padding: 2.25rem 1.25rem 1.75rem;
+      background: #020617;
+      border: 12px solid #1e293b;
+      border-radius: 42px;
+      box-shadow: 0 25px 60px -15px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.08);
+      position: relative;
+    }
+    .tablet-notch {
+      position: absolute;
+      top: 9px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 96px;
+      height: 14px;
+      background: #0f172a;
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      border: 1px solid #334155;
+      z-index: 25;
+    }
+    .tablet-lens {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #475569;
+    }
+    .tablet-sensor {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: #3b82f6;
+      animation: mpiPulseSlow 2s infinite ease-in-out;
+    }
+    .dashboard-canvas {
+      background: linear-gradient(180deg, #fffbeb 0%, #ffffff 20%, #f8fafc 100%);
+      border: 1.5px solid #fde68a;
+      border-radius: 28px;
+      padding: 1.75rem;
+      box-shadow: 0 10px 30px -10px rgba(0,0,0,0.08);
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      box-sizing: border-box;
+    }
+    @media (max-width: 640px) {
+      .dashboard-canvas {
+        padding: 1rem;
+        gap: 1rem;
+      }
+      .dashboard-container.frame-tablet {
+        border-width: 6px;
+        border-radius: 28px;
+        padding: 1.75rem 0.5rem 1rem;
+      }
+    }
+
+    /* Section 1: Profile & Quick Nav */
+    .dash-profile-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1.5px solid #fef3c7;
+      flex-wrap: wrap;
+    }
+    .dash-student-group {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .dash-avatar-btn {
+      width: 58px;
+      height: 58px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #f59e0b, #ea580c);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.75rem;
+      box-shadow: 0 8px 16px -4px rgba(245, 158, 11, 0.4);
+      border: 2.5px solid #ffffff;
+      cursor: pointer;
+      position: relative;
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    .dash-avatar-btn:hover {
+      transform: scale(1.06);
+    }
+    .dash-avatar-badge {
+      position: absolute;
+      bottom: -2px;
+      right: -2px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #10b981;
+      border: 2px solid white;
+      color: white;
+      font-size: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+    }
+    .dash-quick-btns {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .dash-quick-btn {
+      padding: 0.55rem 0.9rem;
+      border-radius: 12px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      border: 1px solid transparent;
+      transition: all 0.2s;
+    }
+    .dash-quick-btn.blue {
+      background: #eff6ff;
+      color: #1d4ed8;
+      border-color: #bfdbfe;
+    }
+    .dash-quick-btn.blue:hover {
+      background: #dbeafe;
+    }
+    .dash-quick-btn.teal {
+      background: #f0fdfa;
+      color: #0f766e;
+      border-color: #99f6e4;
+    }
+    .dash-quick-btn.teal:hover {
+      background: #ccfbf1;
+    }
+    .dash-quick-btn.indigo {
+      background: #eef2ff;
+      color: #4338ca;
+      border-color: #c7d2fe;
+    }
+    .dash-quick-btn.indigo:hover {
+      background: #e0e7ff;
+    }
+
+    /* Section 2: Progress Tracker Card */
+    .dash-tracker-card {
+      background: linear-gradient(135deg, #f59e0b 0%, #ea580c 50%, #d97706 100%);
+      color: #0f172a;
+      border-radius: 20px;
+      padding: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+      box-shadow: 0 12px 25px -8px rgba(234,88,12,0.4);
+      position: relative;
+      overflow: hidden;
+      flex-wrap: wrap;
+    }
+    .dash-tracker-glow {
+      position: absolute;
+      right: -30px;
+      bottom: -30px;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.15);
+      filter: blur(20px);
+      pointer-events: none;
+    }
+    .dash-gauge-box {
+      background: rgba(15, 23, 42, 0.92);
+      color: white;
+      border-radius: 16px;
+      padding: 0.9rem 1.25rem;
+      border: 1px solid rgba(253, 230, 138, 0.4);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      flex-shrink: 0;
+    }
+    .dash-gauge-svg {
+      width: 64px;
+      height: 64px;
+      transform: rotate(-90deg);
+      flex-shrink: 0;
+    }
+
+    /* Section 3: Central Gamified Adventure Map */
+    .master-map-container {
+      background: #0f172a;
+      border-radius: 24px;
+      border: 2px solid #1e293b;
+      overflow: hidden;
+      box-shadow: 0 15px 35px -10px rgba(0,0,0,0.4);
+    }
+    .map-header-bar {
+      background: #1e293b;
+      padding: 1rem 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #334155;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .map-header-left {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+    .map-avatar-pawn {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      box-shadow: 0 4px 10px rgba(245,158,11,0.3);
+      border: 2px solid #fef08a;
+      flex-shrink: 0;
+    }
+    .map-header-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .btn-map-action {
+      padding: 0.55rem 1rem;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.2s;
+    }
+    .btn-map-action.purple {
+      background: linear-gradient(135deg, #7c3aed, #4f46e5);
+      color: white;
+      box-shadow: 0 4px 10px rgba(124,58,237,0.3);
+    }
+    .btn-map-action.purple:hover {
+      background: linear-gradient(135deg, #8b5cf6, #6366f1);
+    }
+    .btn-map-action.amber {
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: #0f172a;
+      font-weight: 900;
+      box-shadow: 0 4px 10px rgba(245,158,11,0.3);
+    }
+    .btn-map-action.amber:hover {
+      background: #fbbf24;
+    }
+    .map-canvas-viewport {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      min-height: 780px;
+      background: radial-gradient(circle at 50% 10%, #064e3b 0%, #022c22 100%);
+      transition: background 0.4s;
+    }
+    .map-svg-trail {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+    .map-node-item {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+      z-index: 10;
+      transition: transform 0.2s ease;
+    }
+    .map-node-item:hover {
+      transform: translate(-50%, -50%) scale(1.12);
+    }
+    .map-node-btn {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border: 3.5px solid;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+      position: relative;
+      cursor: pointer;
+      outline: none;
+      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s;
+    }
+    .map-node-btn:hover {
+      transform: scale(1.1);
+    }
+    .map-node-btn.node-active {
+      background: linear-gradient(135deg, #fde047, #f59e0b);
+      border-color: #fef08a;
+      color: #0f172a;
+      box-shadow: 0 0 25px rgba(251,191,36,0.85);
+      animation: mpiPulseSlow 2s infinite ease-in-out;
+    }
+    .map-node-btn.node-done {
+      background: linear-gradient(135deg, #38bdf8, #2563eb);
+      border-color: #bae6fd;
+      color: white;
+      box-shadow: 0 4px 15px rgba(37,99,235,0.45);
+    }
+    .map-node-btn.node-locked {
+      background: linear-gradient(135deg, #475569, #1e293b);
+      border-color: #64748b;
+      color: #94a3b8;
+      opacity: 0.72;
+    }
+    .map-node-btn.node-boss {
+      width: 82px;
+      height: 82px;
+      background: linear-gradient(135deg, #ef4444, #991b1b);
+      border-color: #fca5a5;
+      color: #fef08a;
+      box-shadow: 0 0 30px rgba(239,68,68,0.8);
+    }
+    .map-node-label {
+      margin-top: 6px;
+      padding: 0.2rem 0.65rem;
+      border-radius: 9999px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      background: rgba(15, 23, 42, 0.92);
+      color: #f8fafc;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      white-space: nowrap;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      max-width: 170px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .map-active-avatar-marker {
+      position: absolute;
+      top: -46px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: mpiBounceIn 0.5s ease;
+      pointer-events: none;
+      z-index: 20;
+    }
+    .map-avatar-bubble {
+      background: #fef08a;
+      color: #854d0e;
+      font-size: 0.68rem;
+      font-weight: 900;
+      padding: 0.15rem 0.5rem;
+      border-radius: 6px;
+      white-space: nowrap;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      border: 1px solid #fde047;
+    }
+
+    /* Section 4: Resource Library Showcase */
+    .dash-resource-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    @media (max-width: 768px) {
+      .dash-resource-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .dash-resource-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      transition: all 0.2s;
+    }
+    .dash-resource-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+    .dash-resource-banner {
+      height: 110px;
+      border-radius: 12px;
+      padding: 0.75rem;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-bottom: 0.75rem;
+    }
+    .dash-resource-banner.b1 { background: linear-gradient(135deg, #2563eb, #4f46e5); }
+    .dash-resource-banner.b2 { background: linear-gradient(135deg, #f59e0b, #ea580c); }
+    .dash-resource-banner.b3 { background: linear-gradient(135deg, #0d9488, #059669); }
+
+    /* Modals for Gamification */
+    .gamify-modal-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 100000;
+      background: rgba(2, 6, 23, 0.82);
+      backdrop-filter: blur(6px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+    .gamify-modal-box {
+      background: white;
+      border-radius: 24px;
+      max-width: 520px;
+      width: 100%;
+      overflow: hidden;
+      box-shadow: 0 25px 60px -15px rgba(0,0,0,0.6);
+      border: 1px solid var(--border);
+      animation: mpiBounceIn 0.35s ease;
+      display: flex;
+      flex-direction: column;
+      max-height: 90vh;
+    }
+
     /* GERBANG MASUK SISWA & ANIMASI IDENTITAS KARYA */
     .gate-overlay {
       position: fixed;
@@ -1389,10 +2023,10 @@ export function generateStandaloneMpiHtml(
       <div style="padding: 1.75rem 2rem;">
         <div id="gateAlertBox" style="display: none; padding: 0.75rem 1rem; border-radius: 12px; background: #fff1f2; border: 1px solid #fecdd3; color: #be123c; font-size: 0.85rem; font-weight: 700; text-align: center; margin-bottom: 1.25rem;"></div>
 
-        <form id="formGateSiswa" onsubmit="handleGateStep1Submit(event)">
+        <form id="formGateSiswa" action="javascript:void(0);" onsubmit="handleGateStep1Submit(event); return false;">
           <div class="gate-input-group">
             <label class="gate-input-label" for="inputGateNama">
-              👤 Nama Lengkap Siswa <span style="color: #e11d48;">*</span>
+              👤 Nama Lengkap Siswa
             </label>
             <input 
               type="text" 
@@ -1400,13 +2034,23 @@ export function generateStandaloneMpiHtml(
               class="gate-input" 
               placeholder="Ketik nama lengkap Anda di sini..." 
               autocomplete="name" 
-              required 
+              onkeydown="if(event.key==='Enter'){event.preventDefault();handleGateStep1Submit(event);}"
             />
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.35rem; font-size: 0.75rem;">
+              <span style="color: #64748b;">Nama otomatis dicetak di sertifikat &amp; rapor evaluasi.</span>
+              <button 
+                type="button" 
+                onclick="setQuickStudentName(event)" 
+                style="background: none; border: none; color: #2563eb; font-weight: 800; cursor: pointer; text-decoration: underline; padding: 0;"
+              >
+                Isi "Peserta Didik"
+              </button>
+            </div>
           </div>
 
           <div class="gate-input-group">
             <label class="gate-input-label" for="inputGateKelas">
-              🎓 Kelas / Rombel Siswa <span style="color: #e11d48;">*</span>
+              🎓 Kelas / Rombel Siswa
             </label>
             <input 
               type="text" 
@@ -1414,13 +2058,14 @@ export function generateStandaloneMpiHtml(
               class="gate-input" 
               placeholder="Contoh: ${activeConfig.kelas} IPS 1" 
               value="${activeConfig.kelas}" 
-              required 
+              onkeydown="if(event.key==='Enter'){event.preventDefault();handleGateStep1Submit(event);}"
             />
           </div>
 
           <div style="margin-top: 1.75rem; display: flex; flex-direction: column; gap: 0.75rem;">
             <button 
-              type="submit" 
+              type="button" 
+              onclick="handleGateStep1Submit(event)" 
               id="btnGateLanjut" 
               class="btn-action anim-hover-lift" 
               style="width: 100%; justify-content: center; padding: 1rem 1.5rem; font-size: 1.05rem; font-weight: 800; border-radius: 14px; background: linear-gradient(135deg, #2563eb, #4f46e5); color: #ffffff; box-shadow: 0 10px 20px -5px rgba(37,99,235,0.4); cursor: pointer; border: none;"
@@ -1602,15 +2247,24 @@ export function generateStandaloneMpiHtml(
 
       <!-- Footer Info & Direct Start Button -->
       <div style="text-align: center; margin-top: 1.5rem; display: flex; flex-direction: column; align-items: center; gap: 0.75rem;">
-        <button 
-          type="button" 
-          onclick="selectModuleAndEnter('materi')" 
-          style="padding: 0.85rem 2rem; border-radius: 14px; background: linear-gradient(135deg, #2563eb, #4f46e5); color: #ffffff; font-weight: 800; font-size: 0.95rem; border: none; cursor: pointer; box-shadow: 0 4px 14px rgba(37,99,235,0.35); display: inline-flex; align-items: center; gap: 0.5rem;"
-        >
-          <span>🚀</span> Langsung Mulai dari Modul Belajar →
-        </button>
+        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center;">
+          <button 
+            type="button" 
+            onclick="selectModuleAndEnter('dashboard')" 
+            style="padding: 0.85rem 2rem; border-radius: 14px; background: linear-gradient(135deg, #f59e0b, #ea580c); color: #0f172a; font-weight: 900; font-size: 0.95rem; border: none; cursor: pointer; box-shadow: 0 4px 14px rgba(245,158,11,0.35); display: inline-flex; align-items: center; gap: 0.5rem;"
+          >
+            <span>🧭</span> Buka Dasbor Interaktif &amp; Peta Petualangan →
+          </button>
+          <button 
+            type="button" 
+            onclick="selectModuleAndEnter('materi')" 
+            style="padding: 0.85rem 1.5rem; border-radius: 14px; background: linear-gradient(135deg, #2563eb, #4f46e5); color: #ffffff; font-weight: 800; font-size: 0.95rem; border: none; cursor: pointer; box-shadow: 0 4px 14px rgba(37,99,235,0.35); display: inline-flex; align-items: center; gap: 0.5rem;"
+          >
+            <span>🚀</span> Modul Belajar
+          </button>
+        </div>
         <span style="font-size: 0.78rem; color: #64748b;">
-          💡 Selesaikan modul secara berurutan sesuai alur MPI (Belajar ➔ Bermain ➔ Berlatih).
+          💡 Masuk ke Dasbor Hub untuk melihat Peta Petualangan atau pilih modul belajar langsung.
         </span>
       </div>
 
@@ -1804,6 +2458,53 @@ export function generateStandaloneMpiHtml(
     </div>
   </header>
 
+  <!-- GAMIFICATION HUD BAR (HEARTS, COINS, STREAK, LEVEL, ACTIONS) -->
+  <div class="gamify-hud-bar" id="gamifyHudBar">
+    <div class="gamify-hud-inner">
+      <!-- Left: Hearts & Coins -->
+      <div style="display:flex; align-items:center; gap:0.6rem;">
+        <!-- Hearts Meter -->
+        <div class="gamify-hud-pill">
+          <div id="hudHeartsList" style="display:flex; align-items:center; gap:2px; font-size:0.85rem;">
+            <span>❤️</span><span>❤️</span><span>❤️</span><span>❤️</span><span>❤️</span>
+          </div>
+          <button type="button" onclick="openRefillHearts()" class="hud-plus-btn rose" title="Isi Ulang Nyawa Belajar">+</button>
+        </div>
+
+        <!-- Coins Meter -->
+        <div class="gamify-hud-pill">
+          <span>🪙</span>
+          <span id="hudCoinsVal" style="font-weight:900; color:#fde047; font-size:0.85rem; font-family:monospace;">250</span>
+          <button type="button" onclick="openShopModal()" class="hud-plus-btn amber" title="Buka Toko Koin & Badges">+</button>
+        </div>
+      </div>
+
+      <!-- Center: Streak & Level -->
+      <div style="display:flex; align-items:center; gap:0.5rem;">
+        <div class="gamify-hud-pill streak" id="hudStreakPill">
+          <span>🔥</span>
+          <span style="font-size:0.75rem; font-weight:800; color:#fbbf24;">1 Hari Streak</span>
+        </div>
+
+        <div class="gamify-hud-pill level">
+          <span style="color:#fbbf24;">⚡</span>
+          <span id="hudLevelVal" style="font-size:0.75rem; font-weight:900; color:#ffffff;">Lvl 1</span>
+          <span id="hudLevelTitle" style="font-size:0.7rem; color:#a5b4fc; font-weight:600;">(Penjelajah)</span>
+        </div>
+      </div>
+
+      <!-- Right: Action Buttons -->
+      <div style="display:flex; align-items:center; gap:0.4rem;">
+        <button type="button" onclick="openSpinWheel()" class="btn-hud-action purple" title="Putar Roda Keberuntungan Harian">
+          <span>🔄</span> <span>Spin Wheel</span>
+        </button>
+        <button type="button" onclick="openShopModal()" class="btn-hud-action amber" title="Buka Toko Koin & Avatar">
+          <span>🛍️</span> <span>Toko &amp; Badges</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- PREREQUISITE PROGRESS RIBBON -->
   <div class="prereq-ribbon" id="prereqRibbon">
     <div style="display: flex; align-items: center; gap: 0.5rem;">
@@ -1825,7 +2526,10 @@ export function generateStandaloneMpiHtml(
 
   <!-- NAVIGATION TABS -->
   <nav class="nav-tabs" id="navTabsContainer">
-    <button class="tab-btn active" id="tabBtnMateri" onclick="switchTab('materi')">
+    <button class="tab-btn active" id="tabBtnDashboard" onclick="switchTab('dashboard')">
+      🧭 0. Dasbor Hub
+    </button>
+    <button class="tab-btn" id="tabBtnMateri" onclick="switchTab('materi')">
       📖 1. Modul Materi <span id="tabMateriBadge" class="tab-done-badge" style="display:none;">✓ Selesai</span>
     </button>
     <button class="tab-btn tab-locked" id="tabBtnBermain" onclick="switchTab('bermain')">
@@ -1861,8 +2565,235 @@ export function generateStandaloneMpiHtml(
 
   <!-- MAIN CONTAINER -->
   <main>
+    <!-- TAB 0: DASBOR HUB INTERAKTIF -->
+    <section id="view-dashboard" class="section-view active">
+      
+      <!-- Top Bar: Frame Mode Controls -->
+      <div class="dashboard-top-bar">
+        <div class="dash-title-group">
+          <div class="dash-icon-box">🧭</div>
+          <div>
+            <h2 style="font-size: 0.95rem; font-weight: 900; color: white; margin: 0; line-height: 1.2;">
+              Dasbor Interaktif Hub Sosiologi
+            </h2>
+            <p style="font-size: 0.72rem; color: #94a3b8; margin: 0.15rem 0 0;">
+              Tampilan UI/UX Gamifikasi Tablet untuk Pembelajaran MPI
+            </p>
+          </div>
+        </div>
+
+        <div class="dash-frame-toggle-box">
+          <button type="button" class="btn-frame-toggle active" id="btnFrameFull" onclick="setFrameMode('full')">
+            💻 <span>Layar Penuh</span>
+          </button>
+          <button type="button" class="btn-frame-toggle" id="btnFrameTablet" onclick="setFrameMode('tablet')">
+            📱 <span>Frame Tablet UI</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- DASHBOARD CONTAINER (FULL OR TABLET MOCKUP) -->
+      <div id="dashContainer" class="dashboard-container frame-full">
+        
+        <!-- Tablet Camera Notch Mockup -->
+        <div id="tabletNotch" class="tablet-notch" style="display: none;">
+          <div class="tablet-lens"></div>
+          <div class="tablet-sensor"></div>
+        </div>
+
+        <!-- INNER DASHBOARD CANVAS -->
+        <div class="dashboard-canvas">
+          
+          <!-- 🌟 1. PROFILE & QUICK MODULE SHORTCUTS 🌟 -->
+          <div class="dash-profile-bar">
+            
+            <div class="dash-student-group">
+              <button type="button" class="dash-avatar-btn" onclick="openStudentModal()" title="Klik untuk ubah identitas siswa">
+                <span id="dashAvatarIcon">👤</span>
+                <span class="dash-avatar-badge">✓</span>
+              </button>
+
+              <div>
+                <div style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.25rem;">
+                  <span style="font-size: 0.65rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.05em; background: #fef3c7; color: #92400e; padding: 0.15rem 0.5rem; border-radius: 9999px; border: 1px solid #fde68a;">
+                    Siswa Aktif MPI
+                  </span>
+                  <span id="dashStudentClass" style="font-size: 0.75rem; font-weight: 800; color: #64748b;">
+                    ${activeConfig.kelas}
+                  </span>
+                </div>
+                <h1 style="font-size: 1.45rem; font-weight: 900; color: #0f172a; margin: 0; letter-spacing: -0.02em; display: flex; align-items: center; gap: 0.4rem;">
+                  <span>Selamat Datang, <span id="dashStudentName">Peserta Didik</span>!</span>
+                  <span style="color: #f59e0b;">✨</span>
+                </h1>
+                <p style="font-size: 0.78rem; color: #475569; margin: 0.2rem 0 0; font-weight: 600;">
+                  ${activeConfig.judul} • ${activeConfig.mataPelajaran} (${activeConfig.fase})
+                </p>
+              </div>
+            </div>
+
+            <div class="dash-quick-btns">
+              <button type="button" class="dash-quick-btn blue" onclick="switchTab('materi')" id="dashQuickMateri">
+                📖 <span>Modul Materi (0/${activeMateri.length})</span>
+              </button>
+              <button type="button" class="dash-quick-btn teal" onclick="switchTab('bermain')" id="dashQuickGame">
+                🎮 <span>Modul Game (0/${activeBermain.length}) 🔒</span>
+              </button>
+              <button type="button" class="dash-quick-btn indigo" onclick="switchTab('berlatih')" id="dashQuickLatih">
+                📝 <span>Bank Soal (${activeLatih.length} HOTS) 🔒</span>
+              </button>
+            </div>
+
+          </div>
+
+          <!-- 📈 2. PROGRESS TRACKER CARD 📈 -->
+          <div class="dash-tracker-card">
+            <div class="dash-tracker-glow"></div>
+
+            <div style="position: relative; z-index: 2; max-width: 460px;">
+              <span style="font-size: 0.65rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.08em; background: rgba(15,23,42,0.3); color: #fef08a; padding: 0.2rem 0.6rem; border-radius: 9999px; border: 1px solid rgba(254,240,138,0.4); display: inline-block; margin-bottom: 0.4rem;">
+                Progress Tracker Pembelajaran
+              </span>
+              <h3 style="font-size: 1.25rem; font-weight: 900; color: #0f172a; margin: 0; line-height: 1.25;">
+                Progres Kelengkapan Misi MPI Sosiologi
+              </h3>
+              <p style="font-size: 0.8rem; color: #1e293b; margin: 0.35rem 0 0; font-weight: 600; line-height: 1.4;">
+                Selesaikan Modul Materi &amp; Kuis Mini untuk membuka Modul Bermain Game Peta Petualangan dan Bank Soal Evaluasi.
+              </p>
+            </div>
+
+            <div class="dash-gauge-box">
+              <svg class="dash-gauge-svg" viewBox="0 0 60 60">
+                <circle cx="30" cy="30" r="24" stroke="#334155" stroke-width="5" fill="none" />
+                <circle id="dashGaugeCircle" cx="30" cy="30" r="24" stroke="#f59e0b" stroke-width="5" stroke-linecap="round" fill="none" stroke-dasharray="150.8" stroke-dashoffset="150.8" style="transition: stroke-dashoffset 1s ease-out;" />
+              </svg>
+              <div>
+                <span style="font-size: 0.65rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: #fde047; display: block;">
+                  Capaian Total
+                </span>
+                <span id="dashGaugeLabel" style="font-size: 1.1rem; font-weight: 900; color: white; display: block; line-height: 1.2;">
+                  0% Selesai
+                </span>
+                <span style="font-size: 0.72rem; color: #94a3b8; display: block; margin-top: 2px;">
+                  Target KKM: <strong style="color: #fbbf24;">${activeConfig.kkm} PTS</strong>
+                </span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- 🗺️ 3. CENTRAL MASTER GAMIFIED ADVENTURE MAP 🗺️ -->
+          <div class="master-map-container" id="masterMapSection">
+            
+            <div class="map-header-bar">
+              <div class="map-header-left">
+                <div class="map-avatar-pawn" id="mapTopAvatarIcon">
+                  🎒
+                </div>
+                <div>
+                  <div style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.2rem;">
+                    <span style="font-size: 0.65rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.05em; background: rgba(245,158,11,0.2); color: #fde047; padding: 0.15rem 0.5rem; border-radius: 9999px; border: 1px solid rgba(245,158,11,0.4);">
+                      Peta Misi Sosiologi SMA
+                    </span>
+                    <span id="mapOpenCount" style="font-size: 0.75rem; font-weight: 700; color: #cbd5e1;">
+                      1 / ${activeMateri.length + activeBermain.length + 1} Misi Terbuka
+                    </span>
+                  </div>
+                  <h3 style="font-size: 1.2rem; font-weight: 900; color: white; margin: 0;">
+                    Peta Petualangan Belajar Interaktif
+                  </h3>
+                </div>
+              </div>
+
+              <div class="map-header-actions">
+                <button type="button" class="btn-map-action purple" onclick="openSpinWheel()">
+                  <span style="font-size: 1rem;">🔄</span>
+                  <span>Spin Wheel</span>
+                </button>
+                <button type="button" class="btn-map-action amber" onclick="openShopModal()">
+                  <span style="font-size: 1rem;">🛒</span>
+                  <span>Toko &amp; Badges</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Canvas Viewport with Trail & Nodes -->
+            <div id="mapViewport" class="map-canvas-viewport">
+              <!-- Dynamically populated by renderMasterAdventureMap() -->
+            </div>
+
+          </div>
+
+          <!-- 📚 4. RESOURCE LIBRARY & TOPIC SHOWCASE CARDS 📚 -->
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+              <div>
+                <span style="font-size: 0.65rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.06em; background: #fef3c7; color: #92400e; padding: 0.15rem 0.5rem; border-radius: 9999px; border: 1px solid #fde68a;">
+                  Resource Library &amp; Media Showcase
+                </span>
+                <h4 style="font-size: 1.1rem; font-weight: 900; color: #0f172a; margin: 0.2rem 0 0;">
+                  Koleksi Visual Infografis &amp; Studi Kasus
+                </h4>
+              </div>
+              <button type="button" onclick="switchTab('materi')" style="background: none; border: none; color: #b45309; font-size: 0.78rem; font-weight: 800; cursor: pointer; display: flex; align-items: center; gap: 0.25rem;">
+                <span>Lihat Seluruh Media</span> <span>➔</span>
+              </button>
+            </div>
+
+            <div class="dash-resource-grid">
+              
+              <div class="dash-resource-card">
+                <div class="dash-resource-banner b1">
+                  <span style="font-size: 0.68rem; font-weight: 900; text-transform: uppercase; background: rgba(255,255,255,0.25); padding: 0.15rem 0.5rem; border-radius: 6px; width: max-content;">
+                    Infografis Teori
+                  </span>
+                  <div style="font-size: 0.95rem; font-weight: 900; line-height: 1.3;">
+                    Syarat Kelompok Sosial (Soerjono Soekanto)
+                  </div>
+                </div>
+                <p style="font-size: 0.78rem; color: #64748b; margin: 0; line-height: 1.4;">
+                  5 Indikator utama kesadaran keanggotaan (we-feeling), pola interaksi, dan struktur norma sosial.
+                </p>
+              </div>
+
+              <div class="dash-resource-card">
+                <div class="dash-resource-banner b2">
+                  <span style="font-size: 0.68rem; font-weight: 900; text-transform: uppercase; background: rgba(255,255,255,0.25); padding: 0.15rem 0.5rem; border-radius: 6px; width: max-content;">
+                    Komparasi Visual
+                  </span>
+                  <div style="font-size: 0.95rem; font-weight: 900; line-height: 1.3;">
+                    Paguyuban (Gemeinschaft) vs Patembayan (Gesellschaft)
+                  </div>
+                </div>
+                <p style="font-size: 0.78rem; color: #64748b; margin: 0; line-height: 1.4;">
+                  Perbandingan ikatan batin gotong royong keluarga vs relasi kontraktual perkotaan modern.
+                </p>
+              </div>
+
+              <div class="dash-resource-card">
+                <div class="dash-resource-banner b3">
+                  <span style="font-size: 0.68rem; font-weight: 900; text-transform: uppercase; background: rgba(255,255,255,0.25); padding: 0.15rem 0.5rem; border-radius: 6px; width: max-content;">
+                    Game Interaktif
+                  </span>
+                  <div style="font-size: 0.95rem; font-weight: 900; line-height: 1.3;">
+                    Game Tebak Jodoh &amp; Pilah Ciri Sosiologi
+                  </div>
+                </div>
+                <p style="font-size: 0.78rem; color: #64748b; margin: 0; line-height: 1.4;">
+                  Aktivitas gamifikasi 10 level untuk mengasah ingatan dan analisis materi kelompok sosial.
+                </p>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
     <!-- TAB 1: MODUL MATERI -->
-    <section id="view-materi" class="section-view active">
+    <section id="view-materi" class="section-view">
       <div class="materi-grid">
         <div class="submateri-list" id="submateriList"></div>
         <div class="card" id="materiDetailBox"></div>
@@ -1911,6 +2842,203 @@ export function generateStandaloneMpiHtml(
       </div>
     </div>
   </footer>
+
+  <!-- MODAL NODE PREVIEW PETUALANGAN -->
+  <div id="nodePreviewModal" class="gamify-modal-overlay">
+    <div class="gamify-modal-box">
+      <div style="background: linear-gradient(135deg, #0f172a, #1e293b); color: white; padding: 1.25rem 1.5rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #334155;">
+        <div style="display: flex; align-items: center; gap: 0.6rem;">
+          <span style="font-size: 1.35rem;" id="prevNodeIcon">🧭</span>
+          <div>
+            <span id="prevNodeBadge" style="font-size: 0.65rem; font-weight: 900; text-transform: uppercase; background: rgba(245,158,11,0.25); color: #fde047; padding: 0.15rem 0.5rem; border-radius: 9999px; border: 1px solid rgba(245,158,11,0.4);">
+              Modul Belajar Materi
+            </span>
+            <h3 id="prevNodeTitle" style="font-size: 1.1rem; font-weight: 900; margin: 0.2rem 0 0; color: white;">
+              Bab 1: Konsep Kelompok Sosial
+            </h3>
+          </div>
+        </div>
+        <button type="button" onclick="closeNodePreview()" style="background: rgba(255,255,255,0.15); border: none; color: white; width: 32px; height: 32px; border-radius: 50%; cursor: pointer; font-weight: 900; font-size: 1rem;">
+          ✕
+        </button>
+      </div>
+
+      <div style="padding: 1.5rem; overflow-y: auto;">
+        <p id="prevNodeDesc" style="font-size: 0.85rem; color: #475569; margin: 0 0 1.25rem; line-height: 1.5;">
+          Pelajari konsep utama dan selesaikan tantangan kuis refleksi interaktif.
+        </p>
+
+        <!-- Rewards preview -->
+        <div style="background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 16px; padding: 1rem; display: flex; justify-content: space-around; align-items: center; margin-bottom: 1.5rem;">
+          <div style="text-align: center;">
+            <span style="font-size: 0.7rem; font-weight: 800; color: #64748b; text-transform: uppercase; display: block;">Hadiah Koin</span>
+            <span id="prevNodeCoins" style="font-size: 1.1rem; font-weight: 900; color: #d97706;">+100 Koin</span>
+          </div>
+          <div style="width: 1px; height: 30px; background: #cbd5e1;"></div>
+          <div style="text-align: center;">
+            <span style="font-size: 0.7rem; font-weight: 800; color: #64748b; text-transform: uppercase; display: block;">Bonus XP</span>
+            <span id="prevNodeXp" style="font-size: 1.1rem; font-weight: 900; color: #2563eb;">+50 XP</span>
+          </div>
+        </div>
+
+        <button type="button" id="btnStartAdventure" onclick="startSelectedAdventure()" style="width: 100%; padding: 0.95rem 1.5rem; border-radius: 14px; background: linear-gradient(135deg, #f59e0b, #ea580c); color: #0f172a; font-weight: 900; font-size: 1rem; border: none; cursor: pointer; box-shadow: 0 4px 14px rgba(245,158,11,0.4); display: flex; align-items: center; justify-content: center; gap: 0.5rem; transition: transform 0.2s;">
+          🚀 <span>Mulai Petualangan Sekarang →</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL SPIN WHEEL OFFLINE -->
+  <div id="spinWheelModal" class="gamify-modal-overlay">
+    <div class="gamify-modal-box" style="max-width: 440px;">
+      <div style="background: linear-gradient(135deg, #4f46e5, #7c3aed); color: white; padding: 1.25rem 1.5rem; display: flex; justify-content: space-between; align-items: center;">
+        <div style="display: flex; align-items: center; gap: 0.6rem;">
+          <span style="font-size: 1.35rem;">🎡</span>
+          <div>
+            <h3 style="font-size: 1.1rem; font-weight: 900; margin: 0; color: white;">Roda Keberuntungan (Spin Wheel)</h3>
+            <p style="font-size: 0.72rem; color: #e0e7ff; margin: 0.15rem 0 0;">Putar setiap hari untuk koin, nyawa &amp; XP gratis!</p>
+          </div>
+        </div>
+        <button type="button" onclick="closeSpinWheel()" style="background: rgba(255,255,255,0.15); border: none; color: white; width: 32px; height: 32px; border-radius: 50%; cursor: pointer; font-weight: 900; font-size: 1rem;">
+          ✕
+        </button>
+      </div>
+
+      <div style="padding: 1.5rem; text-align: center; display: flex; flex-direction: column; align-items: center;">
+        
+        <!-- Wheel Graphic Wrapper -->
+        <div style="position: relative; width: 260px; height: 260px; margin: 0.5rem auto 1rem;">
+          <!-- Top Arrow Pointer -->
+          <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); width: 0; height: 0; border-left: 12px solid transparent; border-right: 12px solid transparent; border-top: 24px solid #ef4444; z-index: 20; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));"></div>
+
+          <!-- Rotating Wheel SVG -->
+          <div id="spinWheelCanvas" style="width: 100%; height: 100%; border-radius: 50%; overflow: hidden; border: 6px solid #1e293b; box-shadow: 0 10px 25px rgba(0,0,0,0.25); transform: rotate(0deg);">
+            <!-- SVG wheel rendered via drawWheelSvg() -->
+          </div>
+
+          <!-- Center Button -->
+          <button type="button" id="btnDoSpin" onclick="spinTheWheel()" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 62px; height: 62px; border-radius: 50%; background: linear-gradient(135deg, #f59e0b, #d97706); border: 4px solid #ffffff; color: #0f172a; font-weight: 900; font-size: 0.85rem; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 15;">
+            SPIN!
+          </button>
+        </div>
+
+        <div id="spinResultBox" style="display: none; padding: 0.75rem 1rem; border-radius: 12px; background: #ecfdf5; border: 1.5px solid #a7f3d0; color: #065f46; font-size: 0.9rem; font-weight: 800; margin-top: 0.5rem; width: 100%; box-sizing: border-box;">
+        </div>
+
+        <button type="button" onclick="spinTheWheel()" style="margin-top: 1rem; width: 100%; padding: 0.85rem 1.5rem; border-radius: 14px; background: linear-gradient(135deg, #7c3aed, #4f46e5); color: white; font-weight: 900; font-size: 0.95rem; border: none; cursor: pointer; box-shadow: 0 4px 12px rgba(124,58,237,0.35);">
+          🎲 Putar Roda Keberuntungan Sekarang
+        </button>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL TOKO AVATAR, TEMA & BADGES -->
+  <div id="shopModalOverlay" class="gamify-modal-overlay">
+    <div class="gamify-modal-box" style="max-width: 600px;">
+      
+      <div style="background: linear-gradient(135deg, #0f172a, #1e293b); color: white; padding: 1.25rem 1.5rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #334155;">
+        <div style="display: flex; align-items: center; gap: 0.6rem;">
+          <span style="font-size: 1.35rem;">🛒</span>
+          <div>
+            <h3 style="font-size: 1.15rem; font-weight: 900; margin: 0; color: white;">Toko Sosiologi &amp; Lencana Prestasi</h3>
+            <p style="font-size: 0.72rem; color: #94a3b8; margin: 0.15rem 0 0;">Kustomisasi avatar, suasana peta, dan koleksi badges</p>
+          </div>
+        </div>
+        <button type="button" onclick="closeShopModal()" style="background: rgba(255,255,255,0.15); border: none; color: white; width: 32px; height: 32px; border-radius: 50%; cursor: pointer; font-weight: 900; font-size: 1rem;">
+          ✕
+        </button>
+      </div>
+
+      <!-- Shop Tabs -->
+      <div style="display: flex; background: #f1f5f9; padding: 0.5rem 1rem; gap: 0.5rem; border-bottom: 1px solid #e2e8f0;">
+        <button type="button" id="tabShopAvatar" onclick="switchShopTab('avatar')" style="flex: 1; padding: 0.5rem; border-radius: 10px; font-size: 0.8rem; font-weight: 800; border: none; cursor: pointer; background: white; color: #0f172a; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+          👤 Karakter Avatar
+        </button>
+        <button type="button" id="tabShopTheme" onclick="switchShopTab('theme')" style="flex: 1; padding: 0.5rem; border-radius: 10px; font-size: 0.8rem; font-weight: 800; border: none; cursor: pointer; background: transparent; color: #64748b;">
+          🎨 Tema Peta
+        </button>
+        <button type="button" id="tabShopBadges" onclick="switchShopTab('badges')" style="flex: 1; padding: 0.5rem; border-radius: 10px; font-size: 0.8rem; font-weight: 800; border: none; cursor: pointer; background: transparent; color: #64748b;">
+          🏅 Lencana (Badges)
+        </button>
+      </div>
+
+      <!-- Shop Content Area -->
+      <div id="shopContentArea" style="padding: 1.25rem 1.5rem; overflow-y: auto; max-height: 60vh;">
+        <!-- Populated dynamically by renderShopContent() -->
+      </div>
+
+      <div style="padding: 0.85rem 1.5rem; background: #f8fafc; border-top: 1px solid #e2e8f0; display: flex; justify-content: flex-end;">
+        <button type="button" onclick="closeShopModal()" style="padding: 0.55rem 1.25rem; border-radius: 10px; background: #0f172a; color: white; border: none; font-weight: 800; font-size: 0.85rem; cursor: pointer;">
+          Selesai
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MODAL ISI ULANG NYAWA (REFILL HEARTS) -->
+  <div id="refillHeartsModal" class="gamify-modal-overlay">
+    <div class="refill-hearts-card">
+      <button type="button" onclick="closeRefillHearts()" style="position: absolute; top: 12px; right: 12px; width: 32px; height: 32px; border-radius: 50%; background: rgba(255,255,255,0.1); border: none; color: white; cursor: pointer; font-size: 1rem; font-weight: 900;">
+        ✕
+      </button>
+      <div style="width: 56px; height: 56px; border-radius: 20px; background: rgba(244,63,94,0.2); border: 1.5px solid rgba(244,63,94,0.4); display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 0.75rem;">
+        ❤️
+      </div>
+      <h3 style="font-size: 1.25rem; font-weight: 900; margin: 0; color: white;">
+        Isi Ulang Nyawa Belajar
+      </h3>
+      <p style="font-size: 0.8rem; color: #cbd5e1; margin: 0.35rem 0 1.25rem; line-height: 1.4;">
+        Nyawa diperlukan saat mengeksplorasi modul kuis dan tantangan gamifikasi sosiologi.
+      </p>
+
+      <div id="refillQuizBox" style="display: none; background: #1e293b; border-radius: 16px; padding: 1rem; margin-bottom: 1rem; text-align: left;">
+        <div style="font-size: 0.85rem; font-weight: 800; color: #fde047; margin-bottom: 0.5rem;">
+          ⚡ Kuis Kilat Refleksi:
+        </div>
+        <p id="refillQuizQuestion" style="font-size: 0.85rem; color: white; margin-bottom: 0.75rem;">
+          Apa ciri utama dari Paguyuban (Gemeinschaft)?
+        </p>
+        <div style="display: flex; flex-direction: column; gap: 0.5rem;" id="refillQuizOptions">
+          <button type="button" onclick="checkRefillQuiz(0)" style="padding: 0.5rem 0.75rem; border-radius: 10px; border: 1px solid #475569; background: #0f172a; color: white; text-align: left; font-size: 0.8rem; cursor: pointer;">
+            A. Hubungan kontraktual jangka pendek
+          </button>
+          <button type="button" onclick="checkRefillQuiz(1)" style="padding: 0.5rem 0.75rem; border-radius: 10px; border: 1px solid #475569; background: #0f172a; color: white; text-align: left; font-size: 0.8rem; cursor: pointer;">
+            B. Ikatan batin yang mendalam, intim, dan alami
+          </button>
+          <button type="button" onclick="checkRefillQuiz(2)" style="padding: 0.5rem 0.75rem; border-radius: 10px; border: 1px solid #475569; background: #0f172a; color: white; text-align: left; font-size: 0.8rem; cursor: pointer;">
+            C. Berdasarkan pembagian kerja spesialisasi industri
+          </button>
+        </div>
+        <div id="refillQuizMsg" style="margin-top: 0.5rem; font-size: 0.8rem; font-weight: 800; display: none;"></div>
+      </div>
+
+      <div id="refillOptionsList" style="display: flex; flex-direction: column; gap: 0.75rem;">
+        <button type="button" onclick="startRefillQuiz()" style="padding: 0.85rem 1rem; border-radius: 16px; background: linear-gradient(135deg, #059669, #0d9488); border: none; color: white; cursor: pointer; text-align: left; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 4px 10px rgba(5,150,105,0.3);">
+          <div style="display: flex; align-items: center; gap: 0.75rem;">
+            <span style="font-size: 1.5rem;">💡</span>
+            <div>
+              <div style="font-size: 0.85rem; font-weight: 900;">Jawab 1 Kuis Refleksi</div>
+              <div style="font-size: 0.72rem; color: #a7f3d0;">Dapatkan +3 Nyawa Gratis</div>
+            </div>
+          </div>
+          <span style="font-size: 0.8rem; font-weight: 900; background: rgba(255,255,255,0.2); padding: 0.25rem 0.6rem; border-radius: 9999px;">GRATIS</span>
+        </button>
+
+        <button type="button" onclick="refillHeartsWithCoins()" style="padding: 0.85rem 1rem; border-radius: 16px; background: linear-gradient(135deg, #d97706, #b45309); border: none; color: white; cursor: pointer; text-align: left; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 4px 10px rgba(217,119,6,0.3);">
+          <div style="display: flex; align-items: center; gap: 0.75rem;">
+            <span style="font-size: 1.5rem;">🪙</span>
+            <div>
+              <div style="font-size: 0.85rem; font-weight: 900;">Tukar 100 Koin</div>
+              <div style="font-size: 0.72rem; color: #fde68a;">Isi Penuh Menjadi 5 Nyawa</div>
+            </div>
+          </div>
+          <span style="font-size: 0.8rem; font-weight: 900; background: rgba(0,0,0,0.3); padding: 0.25rem 0.6rem; border-radius: 9999px; color: #fde047;">100 Koin</span>
+        </button>
+      </div>
+    </div>
+  </div>
 
   <!-- MODAL PENGATURAN MUSIK OFFLINE (BGM ENGINE) -->
   <div id="musicModalOverlay" class="music-modal-overlay">
@@ -2095,17 +3223,21 @@ export function generateStandaloneMpiHtml(
         this.enabled = true;
       }
       init() {
-        if (!this.ctx) {
-          const AudioCtx = window.AudioContext || window.webkitAudioContext;
-          if (AudioCtx) this.ctx = new AudioCtx();
-        }
-        if (this.ctx && this.ctx.state === 'suspended') this.ctx.resume();
+        try {
+          if (!this.ctx) {
+            const AudioCtx = window.AudioContext || window.webkitAudioContext;
+            if (AudioCtx) this.ctx = new AudioCtx();
+          }
+          if (this.ctx && this.ctx.state === 'suspended') {
+            this.ctx.resume().catch(() => {});
+          }
+        } catch(e){}
       }
       click() {
         if (!this.enabled) return;
-        this.init();
-        if (!this.ctx) return;
         try {
+          this.init();
+          if (!this.ctx) return;
           const osc = this.ctx.createOscillator();
           const gain = this.ctx.createGain();
           osc.frequency.setValueAtTime(450, this.ctx.currentTime);
@@ -2120,9 +3252,9 @@ export function generateStandaloneMpiHtml(
       }
       success() {
         if (!this.enabled) return;
-        this.init();
-        if (!this.ctx) return;
         try {
+          this.init();
+          if (!this.ctx) return;
           const now = this.ctx.currentTime;
           const osc = this.ctx.createOscillator();
           const gain = this.ctx.createGain();
@@ -2141,9 +3273,9 @@ export function generateStandaloneMpiHtml(
       }
       error() {
         if (!this.enabled) return;
-        this.init();
-        if (!this.ctx) return;
         try {
+          this.init();
+          if (!this.ctx) return;
           const now = this.ctx.currentTime;
           const osc = this.ctx.createOscillator();
           const gain = this.ctx.createGain();
@@ -2177,19 +3309,21 @@ export function generateStandaloneMpiHtml(
       }
 
       init() {
-        if (!this.ctx) {
-          const AudioCtx = window.AudioContext || window.webkitAudioContext;
-          if (AudioCtx) {
-            this.ctx = new AudioCtx();
-            this.gainNode = this.ctx.createGain();
-            const currentVol = this.isMuted ? 0 : this.volume * 0.15;
-            this.gainNode.gain.setValueAtTime(currentVol, this.ctx.currentTime);
-            this.gainNode.connect(this.ctx.destination);
+        try {
+          if (!this.ctx) {
+            const AudioCtx = window.AudioContext || window.webkitAudioContext;
+            if (AudioCtx) {
+              this.ctx = new AudioCtx();
+              this.gainNode = this.ctx.createGain();
+              const currentVol = this.isMuted ? 0 : this.volume * 0.15;
+              this.gainNode.gain.setValueAtTime(currentVol, this.ctx.currentTime);
+              this.gainNode.connect(this.ctx.destination);
+            }
           }
-        }
-        if (this.ctx && this.ctx.state === 'suspended') {
-          this.ctx.resume().catch(() => {});
-        }
+          if (this.ctx && this.ctx.state === 'suspended') {
+            this.ctx.resume().catch(() => {});
+          }
+        } catch(e){}
       }
 
       playNote(freq, time, duration, type, peakVol) {
@@ -2518,11 +3652,13 @@ export function generateStandaloneMpiHtml(
 
     // Auto unlock AudioContext on the first gesture anywhere on the window
     function unlockAudioEngine() {
-      audio.init();
-      bgm.init();
+      try { audio.init(); } catch(e){}
+      try { bgm.init(); } catch(e){}
     }
     ['click', 'touchstart', 'keydown', 'mousedown'].forEach(evt => {
-      window.addEventListener(evt, unlockAudioEngine, { once: true });
+      try {
+        window.addEventListener(evt, unlockAudioEngine, { once: true });
+      } catch(e){}
     });
 
     // =========================================================================
@@ -2533,99 +3669,164 @@ export function generateStandaloneMpiHtml(
       kelas: CONFIG.kelas || 'Kelas XI'
     };
 
-    function handleGateStep1Submit(e) {
-      if (e) e.preventDefault();
+    var STUDENT_STORAGE_KEY = 'MPI_OFFLINE_STUDENT_STATE_V1';
+    function saveStudentState() {
+      try {
+        localStorage.setItem(STUDENT_STORAGE_KEY, JSON.stringify(currentStudent));
+      } catch(e){}
+    }
+    function loadStudentState() {
+      try {
+        var raw = localStorage.getItem(STUDENT_STORAGE_KEY);
+        if (raw) {
+          var parsed = JSON.parse(raw);
+          if (parsed && typeof parsed === 'object') {
+            if (parsed.nama) currentStudent.nama = parsed.nama;
+            if (parsed.kelas) currentStudent.kelas = parsed.kelas;
+          }
+        }
+      } catch(e){}
+    }
+
+    function setQuickStudentName(e) {
+      if (e) {
+        try {
+          if (typeof e.preventDefault === 'function') e.preventDefault();
+          if (typeof e.stopPropagation === 'function') e.stopPropagation();
+        } catch(err){}
+      }
       var inputNama = document.getElementById('inputGateNama');
-      var inputKelas = document.getElementById('inputGateKelas');
-      var alertBox = document.getElementById('gateAlertBox');
+      if (inputNama) {
+        inputNama.value = 'Peserta Didik';
+        try { inputNama.focus(); } catch(err){}
+      }
+      currentStudent.nama = 'Peserta Didik';
+      try { audio.click(); } catch(err){}
+    }
 
-      var namaVal = (inputNama.value || '').trim();
-      var kelasVal = (inputKelas.value || '').trim();
+    function handleGateStep1Submit(e) {
+      if (e) {
+        try {
+          if (typeof e.preventDefault === 'function') e.preventDefault();
+          if (typeof e.stopPropagation === 'function') e.stopPropagation();
+        } catch(err){}
+      }
+      try {
+        var inputNama = document.getElementById('inputGateNama');
+        var inputKelas = document.getElementById('inputGateKelas');
+        var alertBox = document.getElementById('gateAlertBox');
 
-      if (!namaVal) {
-        audio.error();
-        alertBox.style.display = 'block';
-        alertBox.textContent = '⚠️ Mohon isikan nama lengkap siswa terlebih dahulu!';
-        inputNama.focus();
-        return false;
+        var namaVal = (inputNama && inputNama.value ? inputNama.value : '').trim();
+        var kelasVal = (inputKelas && inputKelas.value ? inputKelas.value : '').trim();
+
+        // Jika nama dikosongkan, gunakan default "Peserta Didik" agar pembelajaran langsung berjalan lancar
+        if (!namaVal) {
+          namaVal = 'Peserta Didik';
+          if (inputNama) inputNama.value = namaVal;
+        }
+
+        if (!kelasVal) {
+          kelasVal = CONFIG.kelas || 'Kelas XI';
+          if (inputKelas) inputKelas.value = kelasVal;
+        }
+
+        if (alertBox) alertBox.style.display = 'none';
+
+        currentStudent.nama = namaVal;
+        currentStudent.kelas = kelasVal;
+        saveStudentState();
+
+        // Update badges in Step 3 and Header
+        var hdrNama = document.getElementById('hdrStudentName');
+        var hdrKelas = document.getElementById('hdrStudentClass');
+        var s3Nama = document.getElementById('lblStep3StudentNama');
+        var s3Kelas = document.getElementById('lblStep3StudentKelas');
+        var dashNama = document.getElementById('dashStudentName');
+        var dashKelas = document.getElementById('dashStudentClass');
+
+        if (hdrNama) hdrNama.textContent = namaVal;
+        if (hdrKelas) hdrKelas.textContent = kelasVal;
+        if (s3Nama) s3Nama.textContent = namaVal;
+        if (s3Kelas) s3Kelas.textContent = kelasVal;
+        if (dashNama) dashNama.textContent = namaVal;
+        if (dashKelas) dashKelas.textContent = kelasVal;
+
+        // Tutup overlay langsung agar siswa tidak tertahan di gerbang login!
+        var overlay = document.getElementById('gateOverlay');
+        if (overlay) {
+          overlay.classList.add('gate-hidden');
+          overlay.style.display = 'none';
+        }
+      } catch(err) {
+        console.error('Error during gate submit:', err);
+        var overlayErr = document.getElementById('gateOverlay');
+        if (overlayErr) {
+          overlayErr.classList.add('gate-hidden');
+          overlayErr.style.display = 'none';
+        }
       }
 
-      if (!kelasVal) {
-        kelasVal = CONFIG.kelas || 'Kelas XI';
-      }
-
-      audio.success();
-      alertBox.style.display = 'none';
-
-      currentStudent.nama = namaVal;
-      currentStudent.kelas = kelasVal;
-
-      // Update badges in Step 3 and Header
-      var hdrNama = document.getElementById('hdrStudentName');
-      var hdrKelas = document.getElementById('hdrStudentClass');
-      var s3Nama = document.getElementById('lblStep3StudentNama');
-      var s3Kelas = document.getElementById('lblStep3StudentKelas');
-
-      if (hdrNama) hdrNama.textContent = namaVal;
-      if (hdrKelas) hdrKelas.textContent = kelasVal;
-      if (s3Nama) s3Nama.textContent = namaVal;
-      if (s3Kelas) s3Kelas.textContent = kelasVal;
-
-      // Direct START: Tutup overlay dan langsung masuk ke Modul Belajar (Materi)!
-      var overlay = document.getElementById('gateOverlay');
-      if (overlay) {
-        overlay.classList.add('gate-hidden');
-        overlay.style.display = 'none';
-      }
-      switchTab('materi');
-      bgm.start();
+      try { audio.success(); } catch(err){}
+      try { updateDashboardUI(); } catch(err){}
+      try { renderMasterAdventureMap(); } catch(err){}
+      try { switchTab('dashboard'); } catch(err){}
+      try { bgm.start(); } catch(err){}
       return false;
     }
 
-    function handleGateStep1ToStep3() {
-      var inputNama = document.getElementById('inputGateNama');
-      var inputKelas = document.getElementById('inputGateKelas');
-      var alertBox = document.getElementById('gateAlertBox');
-
-      var namaVal = (inputNama.value || '').trim();
-      var kelasVal = (inputKelas.value || '').trim();
-
-      if (!namaVal) {
-        audio.error();
-        alertBox.style.display = 'block';
-        alertBox.textContent = '⚠️ Mohon isikan nama lengkap siswa terlebih dahulu!';
-        inputNama.focus();
-        return;
+    function handleGateStep1ToStep3(e) {
+      if (e) {
+        try {
+          if (typeof e.preventDefault === 'function') e.preventDefault();
+          if (typeof e.stopPropagation === 'function') e.stopPropagation();
+        } catch(err){}
       }
+      try {
+        var inputNama = document.getElementById('inputGateNama');
+        var inputKelas = document.getElementById('inputGateKelas');
+        var alertBox = document.getElementById('gateAlertBox');
 
-      if (!kelasVal) {
-        kelasVal = CONFIG.kelas || 'Kelas XI';
+        var namaVal = (inputNama && inputNama.value ? inputNama.value : '').trim();
+        var kelasVal = (inputKelas && inputKelas.value ? inputKelas.value : '').trim();
+
+        if (!namaVal) {
+          namaVal = 'Peserta Didik';
+          if (inputNama) inputNama.value = namaVal;
+        }
+
+        if (!kelasVal) {
+          kelasVal = CONFIG.kelas || 'Kelas XI';
+          if (inputKelas) inputKelas.value = kelasVal;
+        }
+
+        if (alertBox) alertBox.style.display = 'none';
+
+        currentStudent.nama = namaVal;
+        currentStudent.kelas = kelasVal;
+        saveStudentState();
+
+        var hdrNama = document.getElementById('hdrStudentName');
+        var hdrKelas = document.getElementById('hdrStudentClass');
+        var s3Nama = document.getElementById('lblStep3StudentNama');
+        var s3Kelas = document.getElementById('lblStep3StudentKelas');
+
+        if (hdrNama) hdrNama.textContent = namaVal;
+        if (hdrKelas) hdrKelas.textContent = kelasVal;
+        if (s3Nama) s3Nama.textContent = namaVal;
+        if (s3Kelas) s3Kelas.textContent = kelasVal;
+
+        var step1 = document.getElementById('gateStep1');
+        var step3 = document.getElementById('gateStep3');
+        if (step1) step1.style.display = 'none';
+        if (step3) {
+          step3.style.display = 'block';
+          step3.className = 'gate-card gate-step3-card anim-slide-up';
+        }
+      } catch(err){
+        console.error(err);
       }
-
-      audio.success();
-      alertBox.style.display = 'none';
-
-      currentStudent.nama = namaVal;
-      currentStudent.kelas = kelasVal;
-
-      var hdrNama = document.getElementById('hdrStudentName');
-      var hdrKelas = document.getElementById('hdrStudentClass');
-      var s3Nama = document.getElementById('lblStep3StudentNama');
-      var s3Kelas = document.getElementById('lblStep3StudentKelas');
-
-      if (hdrNama) hdrNama.textContent = namaVal;
-      if (hdrKelas) hdrKelas.textContent = kelasVal;
-      if (s3Nama) s3Nama.textContent = namaVal;
-      if (s3Kelas) s3Kelas.textContent = kelasVal;
-
-      var step1 = document.getElementById('gateStep1');
-      var step3 = document.getElementById('gateStep3');
-      if (step1) step1.style.display = 'none';
-      if (step3) {
-        step3.style.display = 'block';
-        step3.className = 'gate-card gate-step3-card anim-slide-up';
-      }
-      bgm.start();
+      try { audio.success(); } catch(err){}
+      try { bgm.start(); } catch(err){}
     }
 
     function openStudentModal() {
@@ -2882,6 +4083,753 @@ export function generateStandaloneMpiHtml(
     }
 
     // =========================================================================
+    // SISTEM GAMIFIKASI & PETA PETUALANGAN BELAJAR INTERAKTIF
+    // =========================================================================
+    var AVATARS_CATALOG = [
+      { id: 'siswa_biasa', name: 'Siswa Penjelajah', emoji: '🎒', role: 'Pelajar Aktif Sosiologi' },
+      { id: 'sosiolog_muda', name: 'Sosiolog Detektif', emoji: '🕵️‍♂️', role: 'Peneliti Fenomena Sosial' },
+      { id: 'profesor_sosio', name: 'Profesor Sosiologi', emoji: '👨‍🏫', role: 'Pakar Teori & Struktur Sosial' },
+      { id: 'budayawan', name: 'Pakar Kebudayaan', emoji: '🎭', role: 'Ahli Tradisi & Kearifan Lokal' },
+      { id: 'astronot_sosio', name: 'Sosiolog Antariksa', emoji: '👨‍🚀', role: 'Penjelajah Galaksi Sosiologi' }
+    ];
+
+    var MAP_THEMES = [
+      { id: 'valley', name: 'Lembah Hijau', emoji: '🌲', bg: 'radial-gradient(circle at 50% 10%, #064e3b 0%, #022c22 100%)', pathStroke: '#fef08a', pathBorder: '#854d0e', decorations: ['🌲', '🏞️', '🌉', '🏕️', '🌻', '🪵', '🍄', '🦅', '🎯', '🌿'] },
+      { id: 'farm', name: 'Ladang Cendekiawan', emoji: '🌾', bg: 'radial-gradient(circle at 50% 10%, #78350f 0%, #451a03 100%)', pathStroke: '#fed7aa', pathBorder: '#7c2d12', decorations: ['🚜', '🌽', '🏡', '🌾', '🍎', '🌻', '🐄', '🧺', '🐥', '🏆'] },
+      { id: 'space', name: 'Galaxy Antariksa', emoji: '🚀', bg: 'radial-gradient(circle at 50% 10%, #1e1b4b 0%, #020617 100%)', pathStroke: '#38bdf8', pathBorder: '#1e1b4b', decorations: ['🚀', '🪐', '🛸', '⭐', '☄️', '🌌', '🌍', '🛰️', '✨', '🏆'] },
+      { id: 'island', name: 'Pulau Tropis', emoji: '🏝️', bg: 'radial-gradient(circle at 50% 10%, #0e7490 0%, #082f49 100%)', pathStroke: '#fef08a', pathBorder: '#155e75', decorations: ['🏖️', '🌴', '⛵', '🌊', '🐚', '🦜', '🥥', '🌅', '🌺', '🏆'] },
+      { id: 'cyber', name: 'Cyberpunk 2077', emoji: '🤖', bg: 'radial-gradient(circle at 50% 10%, #701a75 0%, #0f172a 100%)', pathStroke: '#f43f5e', pathBorder: '#701a75', decorations: ['🏙️', '⚡', '🤖', '🎮', '🛸', '🛰️', '💾', '🌐', '💎', '🏆'] }
+    ];
+
+    var BADGES_CATALOG = [
+      { id: 'b1', name: 'Penjelajah Pertama', desc: 'Mulai petualangan MPI Sosiologi', icon: '🌟' },
+      { id: 'b2', name: 'Kutu Buku Sosiologi', desc: 'Tuntaskan seluruh bab Modul Belajar', icon: '📖' },
+      { id: 'b3', name: 'Gamers Cerdas', desc: 'Tuntaskan seluruh modul bermain', icon: '🎮' },
+      { id: 'b4', name: 'Master Evaluasi HOTS', desc: 'Selesaikan asesmen evaluasi bank soal', icon: '🎯' },
+      { id: 'b5', name: 'Sosiolog Paripurna', desc: 'Raih nilai evaluasi di atas KKM', icon: '🏆' }
+    ];
+
+    var gamificationState = {
+      coins: 250,
+      xp: 120,
+      level: 1,
+      hearts: 5,
+      activeAvatarId: 'siswa_biasa',
+      activeMapTheme: 'valley',
+      completedNodes: [],
+      unlockedBadges: ['b1']
+    };
+
+    var GAMIFY_STORAGE_KEY = 'MPI_OFFLINE_GAMIFY_STATE_V1';
+    function loadGamificationState() {
+      try {
+        var raw = localStorage.getItem(GAMIFY_STORAGE_KEY);
+        if (raw) {
+          var parsed = JSON.parse(raw);
+          if (parsed && typeof parsed === 'object') {
+            gamificationState = Object.assign(gamificationState, parsed);
+          }
+        }
+      } catch(e){}
+    }
+
+    function saveGamificationState() {
+      try {
+        localStorage.setItem(GAMIFY_STORAGE_KEY, JSON.stringify(gamificationState));
+      } catch(e){}
+    }
+
+    function getActiveAvatar() {
+      for (var i = 0; i < AVATARS_CATALOG.length; i++) {
+        if (AVATARS_CATALOG[i].id === gamificationState.activeAvatarId) {
+          return AVATARS_CATALOG[i];
+        }
+      }
+      return AVATARS_CATALOG[0];
+    }
+
+    // Toggle Frame Mode: Full Screen vs Realistic Tablet Mockup
+    var currentFrameMode = 'full';
+    function setFrameMode(mode) {
+      audio.click();
+      currentFrameMode = mode;
+      var container = document.getElementById('dashContainer');
+      var btnFull = document.getElementById('btnFrameFull');
+      var btnTablet = document.getElementById('btnFrameTablet');
+      var notch = document.getElementById('tabletNotch');
+
+      if (mode === 'tablet') {
+        if (container) container.className = 'dashboard-container frame-tablet';
+        if (btnTablet) btnTablet.classList.add('active');
+        if (btnFull) btnFull.classList.remove('active');
+        if (notch) notch.style.display = 'flex';
+      } else {
+        if (container) container.className = 'dashboard-container frame-full';
+        if (btnFull) btnFull.classList.add('active');
+        if (btnTablet) btnTablet.classList.remove('active');
+        if (notch) notch.style.display = 'none';
+      }
+    }
+
+    // Update Dashboard UI Stats & Gauge
+    function updateDashboardUI() {
+      var sName = document.getElementById('dashStudentName');
+      var sClass = document.getElementById('dashStudentClass');
+      var sAvatar = document.getElementById('dashAvatarIcon');
+      var sTopAvatar = document.getElementById('mapTopAvatarIcon');
+
+      var nameVal = currentStudent.nama || 'Peserta Didik';
+      var classVal = currentStudent.kelas || CONFIG.kelas || 'Kelas XI';
+      var avatarObj = getActiveAvatar();
+
+      if (sName) sName.textContent = nameVal;
+      if (sClass) sClass.textContent = classVal;
+      if (sAvatar) sAvatar.textContent = avatarObj.emoji;
+      if (sTopAvatar) sTopAvatar.textContent = avatarObj.emoji;
+
+      // Update Quick Action Buttons
+      var qMateri = document.getElementById('dashQuickMateri');
+      var qGame = document.getElementById('dashQuickGame');
+      var qLatih = document.getElementById('dashQuickLatih');
+
+      if (qMateri) qMateri.innerHTML = '📖 <span>Modul Materi (' + completedBabIds.length + '/' + MATERI.length + ')</span>';
+      if (qGame) {
+        var gDoneCount = gameProgress.filter(Boolean).length;
+        var matDone = isMateriAllCompleted();
+        qGame.innerHTML = '🎮 <span>Modul Game (' + gDoneCount + '/' + dataBermain.length + ')' + (!matDone ? ' 🔒' : '') + '</span>';
+      }
+      if (qLatih) {
+        var berDone = isBermainAllCompleted();
+        var matDone2 = isMateriAllCompleted();
+        qLatih.innerHTML = '📝 <span>Bank Soal (' + dtLatih.length + ' HOTS)' + ((!matDone2 || !berDone) ? ' 🔒' : '') + '</span>';
+      }
+
+      // Calculate Overall Completion
+      var totalMateri = MATERI.length || 1;
+      var totalGames = dataBermain.length || 1;
+      var materiPct = Math.min(100, Math.round((completedBabIds.length / totalMateri) * 100));
+      var gamePct = Math.min(100, Math.round((gameProgress.filter(Boolean).length / totalGames) * 100));
+      var overallPct = Math.round((materiPct * 0.4) + (gamePct * 0.4) + (isBermainAllCompleted() ? 20 : 0));
+
+      var gaugeVal = document.getElementById('dashGaugeLabel');
+      var gaugeCircle = document.getElementById('dashGaugeCircle');
+
+      if (gaugeCircle) {
+        var circ = 150.8;
+        var offset = circ - (circ * overallPct) / 100;
+        gaugeCircle.style.strokeDashoffset = offset;
+      }
+      if (gaugeVal) {
+        gaugeVal.textContent = overallPct >= 100 ? '🏆 Selesai Tuntas!' : overallPct + '% Selesai';
+      }
+
+      var mapOpen = document.getElementById('mapOpenCount');
+      if (mapOpen) {
+        var openCount = 1 + completedBabIds.length + gameProgress.filter(Boolean).length;
+        var totalNodes = MATERI.length + dataBermain.length + 1;
+        mapOpen.textContent = Math.min(openCount, totalNodes) + ' / ' + totalNodes + ' Misi Terbuka';
+      }
+
+      // Update Top HUD Elements
+      var hudHearts = document.getElementById('hudHeartsList');
+      if (hudHearts) {
+        var hHtml = '';
+        for (var hi = 0; hi < 5; hi++) {
+          hHtml += '<span>' + (hi < gamificationState.hearts ? '❤️' : '🤍') + '</span>';
+        }
+        hudHearts.innerHTML = hHtml;
+      }
+      var hudCoins = document.getElementById('hudCoinsVal');
+      if (hudCoins) hudCoins.textContent = gamificationState.coins.toLocaleString('id-ID');
+      var hudLvl = document.getElementById('hudLevelVal');
+      if (hudLvl) hudLvl.textContent = 'Lvl ' + gamificationState.level;
+      var hudLvlTitle = document.getElementById('hudLevelTitle');
+      if (hudLvlTitle) {
+        var lTitle = gamificationState.level >= 5 ? '(Master Sosiologi)' : gamificationState.level >= 3 ? '(Peneliti Madya)' : '(Penjelajah)';
+        hudLvlTitle.textContent = lTitle;
+      }
+    }
+
+    // Build Master Adventure Map Nodes & SVG Curve
+    var allMapNodes = [];
+    function buildMapNodesList() {
+      allMapNodes = [];
+      var counter = 1;
+      // 1. Materi Nodes
+      MATERI.forEach(function(m, idx) {
+        allMapNodes.push({
+          id: 'materi_' + idx,
+          number: counter++,
+          type: 'materi',
+          targetIdx: idx,
+          title: m.judul,
+          typeLabel: 'Modul Belajar (Materi)',
+          desc: 'Pelajari konsep ' + m.kategori + ' dan selesaikan kuis mini refleksi.',
+          coins: 100,
+          xp: 50,
+          icon: '📖'
+        });
+      });
+      // 2. Game Nodes
+      dataBermain.forEach(function(g, idx) {
+        allMapNodes.push({
+          id: 'game_' + idx,
+          number: counter++,
+          type: 'game',
+          targetIdx: idx,
+          title: g.judul,
+          typeLabel: 'Tantangan Game Sosiologi',
+          desc: g.instruksi || 'Tantangan mini game sosiologi interaktif.',
+          coins: 150,
+          xp: 80,
+          icon: '🎮'
+        });
+      });
+      // 3. Final Boss Node
+      allMapNodes.push({
+        id: 'asesmen_boss',
+        number: counter++,
+        type: 'asesmen',
+        targetIdx: 0,
+        title: 'Evaluasi Final Sosiologi HOTS',
+        typeLabel: 'Evaluasi Final Sosiologi',
+        desc: 'Ujian komprehensif seluruh materi untuk mengklaim predikat kelulusan dan nilai rapor MPI.',
+        coins: 500,
+        xp: 300,
+        icon: '🏆',
+        isBoss: true
+      });
+    }
+
+    function renderMasterAdventureMap() {
+      buildMapNodesList();
+      var viewport = document.getElementById('mapViewport');
+      if (!viewport) return;
+
+      var currentTheme = MAP_THEMES[0];
+      for (var t = 0; t < MAP_THEMES.length; t++) {
+        if (MAP_THEMES[t].id === gamificationState.activeMapTheme) {
+          currentTheme = MAP_THEMES[t];
+          break;
+        }
+      }
+      viewport.style.background = currentTheme.bg;
+
+      var ySpacing = 130;
+      var topMargin = 85;
+      var totalHeight = topMargin + (allMapNodes.length * ySpacing) + 70;
+      viewport.style.minHeight = totalHeight + 'px';
+
+      // Coordinates
+      var coords = [];
+      for (var i = 0; i < allMapNodes.length; i++) {
+        var y = topMargin + (i * ySpacing);
+        var angle = (i * Math.PI) / 2.2;
+        var x = 50 + Math.sin(angle) * 32; // 18% to 82%
+        coords.push({ x: x, y: y });
+      }
+
+      // Generate SVG Trail Path
+      var svgPathD = '';
+      if (coords.length > 0) {
+        svgPathD = 'M ' + (coords[0].x * 10) + ' ' + coords[0].y;
+        for (var j = 0; j < coords.length - 1; j++) {
+          var p1 = coords[j];
+          var p2 = coords[j + 1];
+          var midY = (p1.y + p2.y) / 2;
+          svgPathD += ' C ' + (p1.x * 10) + ' ' + midY + ', ' + (p2.x * 10) + ' ' + midY + ', ' + (p2.x * 10) + ' ' + p2.y;
+        }
+      }
+
+      var svgHtml = '<svg class="map-svg-trail" viewBox="0 0 1000 ' + totalHeight + '" preserveAspectRatio="none">' +
+        '<path d="' + svgPathD + '" stroke="' + (currentTheme.pathBorder || '#854d0e') + '" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" fill="none" />' +
+        '<path d="' + svgPathD + '" stroke="' + currentTheme.pathStroke + '" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="14, 8" fill="none" opacity="0.95" />' +
+        '</svg>';
+
+      // Generate Decorative Scenery Icons alongside Trail
+      var decHtml = '';
+      var decList = currentTheme.decorations || ['🌲', '🏞️', '🌉', '🏕️', '🌻', '🪵', '🍄', '🦅', '🎯', '🌿'];
+      for (var d = 0; d < allMapNodes.length; d++) {
+        var dPos = coords[d];
+        var decIcon = decList[d % decList.length];
+        var dSide = d % 2 === 0 ? Math.max(8, dPos.x - 22) : Math.min(92, dPos.x + 22);
+        decHtml += '<div style="position:absolute; left:' + dSide + '%; top:' + (dPos.y + 30) + 'px; font-size:1.85rem; transform:translate(-50%,-50%); opacity:0.8; pointer-events:none; user-select:none;">' + decIcon + '</div>';
+      }
+
+      // Generate Node HTML
+      var nodesHtml = '';
+      var activeAvatarObj = getActiveAvatar();
+      var hasPlacedAvatar = false;
+
+      for (var k = 0; k < allMapNodes.length; k++) {
+        var node = allMapNodes[k];
+        var pos = coords[k];
+
+        // Status check
+        var isDone = false;
+        if (node.type === 'materi') {
+          isDone = completedBabIds.indexOf(node.targetIdx) !== -1;
+        } else if (node.type === 'game') {
+          isDone = Boolean(gameProgress[node.targetIdx]);
+        }
+
+        var isUnlocked = false;
+        if (k === 0) {
+          isUnlocked = true;
+        } else {
+          var prev = allMapNodes[k - 1];
+          if (prev.type === 'materi') {
+            isUnlocked = completedBabIds.indexOf(prev.targetIdx) !== -1;
+          } else if (prev.type === 'game') {
+            isUnlocked = Boolean(gameProgress[prev.targetIdx]);
+          }
+        }
+
+        var isActiveNode = isUnlocked && !isDone && !hasPlacedAvatar;
+        if (isActiveNode) hasPlacedAvatar = true;
+
+        var btnClass = 'map-node-btn';
+        if (node.isBoss) btnClass += ' node-boss';
+        else if (isDone) btnClass += ' node-done';
+        else if (isActiveNode) btnClass += ' node-active';
+        else if (isUnlocked) btnClass += ' node-active';
+        else btnClass += ' node-locked';
+
+        // Avatar Marker over active node
+        var avatarMarkerHtml = '';
+        if (isActiveNode) {
+          avatarMarkerHtml = '<div class="map-active-avatar-marker" style="position:absolute; top:-66px; left:50%; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; pointer-events:none; z-index:30;">' +
+            '<div style="background:#fbbf24; color:#0f172a; font-weight:900; font-size:10px; padding:2px 8px; border-radius:9999px; white-space:nowrap; box-shadow:0 2px 6px rgba(0,0,0,0.4); border:1px solid #fde047; margin-bottom:2px;">' + activeAvatarObj.name + '</div>' +
+            '<div style="width:44px; height:44px; border-radius:50%; background:#0f172a; border:2.5px solid #fbbf24; display:flex; align-items:center; justify-content:center; font-size:1.45rem; box-shadow:0 6px 14px rgba(0,0,0,0.5);">' + activeAvatarObj.emoji + '</div>' +
+            '<div style="width:0; height:0; border-left:5px solid transparent; border-right:5px solid transparent; border-top:6px solid #fbbf24;"></div>' +
+            '</div>';
+        }
+
+        // Inner button content
+        var btnInnerHtml = '';
+        if (node.isBoss) {
+          btnInnerHtml = '<span style="font-size:2rem; line-height:1;">👑</span>';
+        } else if (!isUnlocked) {
+          btnInnerHtml = '<span style="font-size:1.35rem; color:#94a3b8;">🔒</span>';
+        } else {
+          var typeText = node.type === 'materi' ? 'BAB' : (node.type === 'game' ? 'GAME' : 'KUIS');
+          btnInnerHtml = '<span style="font-size:0.62rem; font-weight:900; text-transform:uppercase; letter-spacing:0.02em; opacity:0.85; line-height:1; margin-bottom:2px;">' + typeText + '</span>' +
+                         '<span style="font-size:1.35rem; font-weight:900; line-height:1;">' + node.number + '</span>';
+        }
+
+        // 3-Star Rating Pill below button
+        var starBadgesHtml = '';
+        if (isUnlocked) {
+          var s1 = isDone ? '⭐' : '★';
+          var s2 = isDone ? '⭐' : '★';
+          var s3 = isDone ? '⭐' : '★';
+          var starColor = isDone ? '#fbbf24' : '#64748b';
+          starBadgesHtml = '<div style="position:absolute; bottom:-9px; left:50%; transform:translateX(-50%); display:flex; align-items:center; gap:2px; background:rgba(15,23,42,0.92); padding:1.5px 7px; border-radius:9999px; border:1px solid rgba(148,163,184,0.3); font-size:9px; color:' + starColor + '; box-shadow:0 2px 5px rgba(0,0,0,0.5); z-index:15;">' +
+            s1 + s2 + s3 +
+            '</div>';
+        }
+
+        // Title Label
+        var labelHtml = '<div class="map-node-label" style="margin-top:12px; padding:3px 10px; border-radius:8px; font-size:11px; font-weight:800; background:rgba(15,23,42,0.88); color:white; border:1px solid rgba(51,65,85,0.8); max-width:130px; text-align:center; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; box-shadow:0 2px 6px rgba(0,0,0,0.4);">' + node.title + '</div>';
+
+        nodesHtml += '<div class="map-node-item" style="left:' + pos.x + '%; top:' + pos.y + 'px;" data-node-id="' + node.id + '" onclick="openNodePreview(this.dataset.nodeId)">' +
+          avatarMarkerHtml +
+          '<button type="button" class="' + btnClass + '">' +
+            btnInnerHtml +
+            starBadgesHtml +
+          '</button>' +
+          labelHtml +
+          '</div>';
+      }
+
+      viewport.innerHTML = svgHtml + decHtml + nodesHtml;
+    }
+
+    // Node Preview Modal Handlers
+    var selectedMapNode = null;
+    function openNodePreview(nodeId) {
+      audio.click();
+      selectedMapNode = null;
+      for (var i = 0; i < allMapNodes.length; i++) {
+        if (allMapNodes[i].id === nodeId) {
+          selectedMapNode = allMapNodes[i];
+          break;
+        }
+      }
+      if (!selectedMapNode) return;
+
+      var modal = document.getElementById('nodePreviewModal');
+      var badge = document.getElementById('prevNodeBadge');
+      var title = document.getElementById('prevNodeTitle');
+      var desc = document.getElementById('prevNodeDesc');
+      var coins = document.getElementById('prevNodeCoins');
+      var xp = document.getElementById('prevNodeXp');
+      var icon = document.getElementById('prevNodeIcon');
+
+      if (badge) badge.textContent = selectedMapNode.typeLabel;
+      if (title) title.textContent = selectedMapNode.title;
+      if (desc) desc.textContent = selectedMapNode.desc;
+      if (coins) coins.textContent = '+' + selectedMapNode.coins + ' Koin';
+      if (xp) xp.textContent = '+' + selectedMapNode.xp + ' XP';
+      if (icon) icon.textContent = selectedMapNode.icon;
+
+      if (modal) modal.style.display = 'flex';
+    }
+
+    function closeNodePreview() {
+      audio.click();
+      var modal = document.getElementById('nodePreviewModal');
+      if (modal) modal.style.display = 'none';
+      selectedMapNode = null;
+    }
+
+    function startSelectedAdventure() {
+      if (!selectedMapNode) return;
+      var node = selectedMapNode;
+      closeNodePreview();
+
+      if (node.type === 'materi') {
+        switchTab('materi');
+        selectMateri(node.targetIdx);
+      } else if (node.type === 'game') {
+        if (!isMateriAllCompleted()) {
+          showPrereqModal(
+            'Modul Bermain Terkunci!',
+            'Sesuai aturan alur MPI: Anda harus menyelesaikan seluruh bab Modul Materi terlebih dahulu!',
+            'materi'
+          );
+          return;
+        }
+        switchTab('bermain');
+        selectGame(node.targetIdx);
+      } else if (node.type === 'asesmen') {
+        if (!isMateriAllCompleted() || !isBermainAllCompleted()) {
+          showPrereqModal(
+            'Modul Berlatih Terkunci!',
+            'Sesuai aturan alur MPI: Anda harus menyelesaikan Modul Belajar (Materi) dan Modul Bermain terlebih dahulu!',
+            isMateriAllCompleted() ? 'bermain' : 'materi'
+          );
+          return;
+        }
+        switchTab('berlatih');
+      }
+    }
+
+    // Spin Wheel Functions
+    var isSpinningWheel = false;
+    var wheelRotationDeg = 0;
+    var WHEEL_SEGMENTS = [
+      { text: '+50 Koin', type: 'coins', amount: 50, color: '#f59e0b' },
+      { text: '+1 Nyawa', type: 'hearts', amount: 1, color: '#ef4444' },
+      { text: '+100 XP', type: 'xp', amount: 100, color: '#3b82f6' },
+      { text: '+25 Koin', type: 'coins', amount: 25, color: '#10b981' },
+      { text: '+200 XP', type: 'xp', amount: 200, color: '#8b5cf6' },
+      { text: '+2 Nyawa', type: 'hearts', amount: 2, color: '#ec4899' },
+      { text: '+150 Koin', type: 'coins', amount: 150, color: '#f97316' },
+      { text: '+50 XP', type: 'xp', amount: 50, color: '#06b6d4' }
+    ];
+
+    function drawWheelSvg() {
+      var container = document.getElementById('spinWheelCanvas');
+      if (!container) return;
+
+      var numSegs = WHEEL_SEGMENTS.length;
+      var stepAngle = 360 / numSegs;
+      var svgParts = '<svg viewBox="0 0 260 260" width="100%" height="100%">';
+
+      for (var i = 0; i < numSegs; i++) {
+        var startA = (i * stepAngle - 90) * Math.PI / 180;
+        var endA = ((i + 1) * stepAngle - 90) * Math.PI / 180;
+        var x1 = 130 + 130 * Math.cos(startA);
+        var y1 = 130 + 130 * Math.sin(startA);
+        var x2 = 130 + 130 * Math.cos(endA);
+        var y2 = 130 + 130 * Math.sin(endA);
+
+        var seg = WHEEL_SEGMENTS[i];
+        svgParts += '<path d="M 130 130 L ' + x1 + ' ' + y1 + ' A 130 130 0 0 1 ' + x2 + ' ' + y2 + ' Z" fill="' + seg.color + '" stroke="#1e293b" stroke-width="2" />';
+
+        // Text label
+        var textAngle = (i * stepAngle + stepAngle / 2);
+        svgParts += '<g transform="rotate(' + textAngle + ' 130 130)">' +
+          '<text x="130" y="45" fill="white" font-size="11" font-weight="900" text-anchor="middle" filter="drop-shadow(0 1px 2px rgba(0,0,0,0.7))">' + seg.text + '</text>' +
+          '</g>';
+      }
+
+      svgParts += '</svg>';
+      container.innerHTML = svgParts;
+    }
+
+    function openSpinWheel() {
+      audio.click();
+      var modal = document.getElementById('spinWheelModal');
+      var resultBox = document.getElementById('spinResultBox');
+      if (resultBox) resultBox.style.display = 'none';
+      if (modal) modal.style.display = 'flex';
+      drawWheelSvg();
+    }
+
+    function closeSpinWheel() {
+      if (isSpinningWheel) return;
+      audio.click();
+      var modal = document.getElementById('spinWheelModal');
+      if (modal) modal.style.display = 'none';
+    }
+
+    function spinTheWheel() {
+      if (isSpinningWheel) return;
+      isSpinningWheel = true;
+      audio.click();
+      var btn = document.getElementById('btnDoSpin');
+      var resultBox = document.getElementById('spinResultBox');
+      if (btn) btn.disabled = true;
+      if (resultBox) resultBox.style.display = 'none';
+
+      var prizeIdx = Math.floor(Math.random() * WHEEL_SEGMENTS.length);
+      var segmentAngle = 360 / WHEEL_SEGMENTS.length;
+      var targetAngle = 360 - (prizeIdx * segmentAngle + segmentAngle / 2);
+      var extraRounds = 5 + Math.floor(Math.random() * 3);
+      wheelRotationDeg += (extraRounds * 360) + targetAngle - (wheelRotationDeg % 360);
+
+      var wheelEl = document.getElementById('spinWheelCanvas');
+      if (wheelEl) {
+        wheelEl.style.transition = 'transform 3.5s cubic-bezier(0.15, 0.9, 0.25, 1)';
+        wheelEl.style.transform = 'rotate(' + wheelRotationDeg + 'deg)';
+      }
+
+      var tickInterval = setInterval(function() {
+        audio.click();
+      }, 250);
+
+      setTimeout(function() {
+        clearInterval(tickInterval);
+        isSpinningWheel = false;
+        if (btn) btn.disabled = false;
+        audio.success();
+        triggerOfflineConfetti();
+
+        var prize = WHEEL_SEGMENTS[prizeIdx];
+        if (prize.type === 'coins') gamificationState.coins += prize.amount;
+        if (prize.type === 'xp') gamificationState.xp += prize.amount;
+        if (prize.type === 'hearts') gamificationState.hearts = Math.min(5, gamificationState.hearts + prize.amount);
+        saveGamificationState();
+
+        if (resultBox) {
+          resultBox.style.display = 'block';
+          resultBox.innerHTML = '🎉 <strong>Selamat!</strong> Anda Memperoleh <strong>' + prize.text + '</strong>!';
+        }
+        updateDashboardUI();
+      }, 3600);
+    }
+
+    // Avatar Shop & Badges Modal Handlers
+    var currentShopTab = 'avatar';
+    function openShopModal() {
+      audio.click();
+      var modal = document.getElementById('shopModalOverlay');
+      if (modal) modal.style.display = 'flex';
+      switchShopTab(currentShopTab);
+    }
+
+    function closeShopModal() {
+      audio.click();
+      var modal = document.getElementById('shopModalOverlay');
+      if (modal) modal.style.display = 'none';
+    }
+
+    function switchShopTab(tab) {
+      audio.click();
+      currentShopTab = tab;
+      var tabA = document.getElementById('tabShopAvatar');
+      var tabT = document.getElementById('tabShopTheme');
+      var tabB = document.getElementById('tabShopBadges');
+
+      if (tabA) {
+        tabA.style.background = tab === 'avatar' ? 'white' : 'transparent';
+        tabA.style.color = tab === 'avatar' ? '#0f172a' : '#64748b';
+      }
+      if (tabT) {
+        tabT.style.background = tab === 'theme' ? 'white' : 'transparent';
+        tabT.style.color = tab === 'theme' ? '#0f172a' : '#64748b';
+      }
+      if (tabB) {
+        tabB.style.background = tab === 'badges' ? 'white' : 'transparent';
+        tabB.style.color = tab === 'badges' ? '#0f172a' : '#64748b';
+      }
+
+      renderShopContent();
+    }
+
+    function renderShopContent() {
+      var area = document.getElementById('shopContentArea');
+      if (!area) return;
+
+      if (currentShopTab === 'avatar') {
+        var html = '<div style="display:grid; grid-template-columns:1fr; gap:0.75rem;">';
+        AVATARS_CATALOG.forEach(function(av) {
+          var isCurrent = av.id === gamificationState.activeAvatarId;
+          html += '<div style="display:flex; align-items:center; justify-content:space-between; padding:0.85rem 1rem; border-radius:16px; border:2px solid ' + (isCurrent ? '#f59e0b' : '#e2e8f0') + '; background:' + (isCurrent ? '#fffbeb' : 'white') + '; gap:1rem;">' +
+            '<div style="display:flex; align-items:center; gap:0.85rem;">' +
+              '<div style="width:48px; height:48px; border-radius:14px; background:#f1f5f9; display:flex; align-items:center; justify-content:center; font-size:1.75rem;">' + av.emoji + '</div>' +
+              '<div>' +
+                '<h4 style="margin:0; font-size:0.95rem; font-weight:900; color:#0f172a;">' + av.name + '</h4>' +
+                '<p style="margin:0.15rem 0 0; font-size:0.75rem; color:#64748b;">' + av.role + '</p>' +
+              '</div>' +
+            '</div>' +
+            (isCurrent 
+              ? '<span style="font-size:0.75rem; font-weight:900; color:#15803d; background:#dcfce7; padding:0.35rem 0.75rem; border-radius:9999px;">✓ Terpilih</span>' 
+              : '<button type="button" data-avatar-id="' + av.id + '" onclick="selectAvatar(this.dataset.avatarId)" style="padding:0.45rem 1rem; border-radius:10px; background:#0f172a; color:white; font-size:0.78rem; font-weight:800; border:none; cursor:pointer;">Gunakan</button>') +
+            '</div>';
+        });
+        html += '</div>';
+        area.innerHTML = html;
+      } else if (currentShopTab === 'theme') {
+        var html2 = '<div style="display:grid; grid-template-columns:1fr; gap:0.75rem;">';
+        MAP_THEMES.forEach(function(th) {
+          var isCurrent = th.id === gamificationState.activeMapTheme;
+          html2 += '<div style="display:flex; align-items:center; justify-content:space-between; padding:0.85rem 1rem; border-radius:16px; border:2px solid ' + (isCurrent ? '#f59e0b' : '#e2e8f0') + '; background:' + (isCurrent ? '#fffbeb' : 'white') + '; gap:1rem;">' +
+            '<div style="display:flex; align-items:center; gap:0.85rem;">' +
+              '<div style="width:48px; height:48px; border-radius:14px; background:' + th.bg + '; display:flex; align-items:center; justify-content:center; font-size:1.5rem; border:1px solid rgba(255,255,255,0.2);">' + th.emoji + '</div>' +
+              '<div>' +
+                '<h4 style="margin:0; font-size:0.95rem; font-weight:900; color:#0f172a;">' + th.name + '</h4>' +
+                '<p style="margin:0.15rem 0 0; font-size:0.75rem; color:#64748b;">Suasana visual peta petualangan</p>' +
+              '</div>' +
+            '</div>' +
+            (isCurrent 
+              ? '<span style="font-size:0.75rem; font-weight:900; color:#15803d; background:#dcfce7; padding:0.35rem 0.75rem; border-radius:9999px;">✓ Aktif</span>' 
+              : '<button type="button" data-theme-id="' + th.id + '" onclick="selectTheme(this.dataset.themeId)" style="padding:0.45rem 1rem; border-radius:10px; background:#0f172a; color:white; font-size:0.78rem; font-weight:800; border:none; cursor:pointer;">Terapkan</button>') +
+            '</div>';
+        });
+        html2 += '</div>';
+        area.innerHTML = html2;
+      } else if (currentShopTab === 'badges') {
+        var html3 = '<div style="display:grid; grid-template-columns:1fr; gap:0.75rem;">';
+        BADGES_CATALOG.forEach(function(bg) {
+          var isUnlocked = gamificationState.unlockedBadges.indexOf(bg.id) !== -1;
+          html3 += '<div style="display:flex; align-items:center; gap:0.85rem; padding:0.85rem 1rem; border-radius:16px; border:1.5px solid #e2e8f0; background:' + (isUnlocked ? 'white' : '#f8fafc') + '; opacity:' + (isUnlocked ? '1' : '0.7') + ';">' +
+            '<div style="width:46px; height:46px; border-radius:14px; background:' + (isUnlocked ? '#fef3c7' : '#e2e8f0') + '; display:flex; align-items:center; justify-content:center; font-size:1.5rem; flex-shrink:0;">' + bg.icon + '</div>' +
+            '<div style="flex:1;">' +
+              '<div style="display:flex; justify-content:space-between; align-items:center;">' +
+                '<h4 style="margin:0; font-size:0.9rem; font-weight:900; color:#0f172a;">' + bg.name + '</h4>' +
+                (isUnlocked ? '<span style="font-size:0.7rem; font-weight:800; color:#15803d; background:#dcfce7; padding:0.15rem 0.5rem; border-radius:9999px;">Terbuka ✓</span>' : '<span style="font-size:0.7rem; font-weight:800; color:#94a3b8;">🔒 Terkunci</span>') +
+              '</div>' +
+              '<p style="margin:0.2rem 0 0; font-size:0.75rem; color:#64748b;">' + bg.desc + '</p>' +
+            '</div>' +
+            '</div>';
+        });
+        html3 += '</div>';
+        area.innerHTML = html3;
+      }
+    }
+
+    function selectAvatar(id) {
+      audio.success();
+      gamificationState.activeAvatarId = id;
+      saveGamificationState();
+      renderShopContent();
+      updateDashboardUI();
+      renderMasterAdventureMap();
+    }
+
+    function selectTheme(id) {
+      audio.success();
+      gamificationState.activeMapTheme = id;
+      saveGamificationState();
+      renderShopContent();
+      renderMasterAdventureMap();
+    }
+
+    // Refill Hearts Modal Handlers
+    function openRefillHearts() {
+      audio.click();
+      var m = document.getElementById('refillHeartsModal');
+      var qBox = document.getElementById('refillQuizBox');
+      var oList = document.getElementById('refillOptionsList');
+      var msg = document.getElementById('refillQuizMsg');
+      if (qBox) qBox.style.display = 'none';
+      if (oList) oList.style.display = 'flex';
+      if (msg) msg.style.display = 'none';
+      if (m) m.style.display = 'flex';
+    }
+
+    function closeRefillHearts() {
+      audio.click();
+      var m = document.getElementById('refillHeartsModal');
+      if (m) m.style.display = 'none';
+    }
+
+    function startRefillQuiz() {
+      audio.click();
+      var qBox = document.getElementById('refillQuizBox');
+      var oList = document.getElementById('refillOptionsList');
+      if (qBox) qBox.style.display = 'block';
+      if (oList) oList.style.display = 'none';
+    }
+
+    function checkRefillQuiz(optIdx) {
+      var msg = document.getElementById('refillQuizMsg');
+      if (optIdx === 1) { // Correct answer: Ikatan batin mendalam
+        audio.success();
+        gamificationState.hearts = Math.min(5, gamificationState.hearts + 3);
+        saveGamificationState();
+        updateDashboardUI();
+        triggerOfflineConfetti();
+        if (msg) {
+          msg.style.display = 'block';
+          msg.style.color = '#10b981';
+          msg.innerHTML = '🎉 Jawaban Benar! +3 Nyawa berhasil ditambahkan!';
+        }
+        setTimeout(function() {
+          closeRefillHearts();
+        }, 1200);
+      } else {
+        audio.error();
+        if (msg) {
+          msg.style.display = 'block';
+          msg.style.color = '#ef4444';
+          msg.innerHTML = '❌ Jawaban belum tepat. Coba pilih opsi lain!';
+        }
+      }
+    }
+
+    function refillHeartsWithCoins() {
+      if (gamificationState.coins < 100) {
+        audio.error();
+        alert('Koin Anda tidak mencukupi (Perlu 100 Koin). Selesaikan bab materi atau mainkan kuis untuk dapat koin!');
+        return;
+      }
+      audio.success();
+      gamificationState.coins -= 100;
+      gamificationState.hearts = 5;
+      saveGamificationState();
+      updateDashboardUI();
+      triggerOfflineConfetti();
+      closeRefillHearts();
+    }
+
+    // Unified Game Completion Handler
+    function markGameComplete(gameIdx) {
+      if (!gameProgress[gameIdx]) {
+        gameProgress[gameIdx] = true;
+        completedGamesCount++;
+        var gameNodeId = 'game_' + gameIdx;
+        if (gamificationState.completedNodes.indexOf(gameNodeId) === -1) {
+          gamificationState.completedNodes.push(gameNodeId);
+          gamificationState.coins += 150;
+          gamificationState.xp += 80;
+          gamificationState.level = Math.max(1, Math.floor(gamificationState.xp / 100) + 1);
+          if (gamificationState.completedNodes.length >= 2 && gamificationState.unlockedBadges.indexOf('b3') === -1) {
+            gamificationState.unlockedBadges.push('b3');
+          }
+          saveGamificationState();
+        }
+      }
+      renderGameNav();
+      updateMpiProgressUI();
+      updateDashboardUI();
+      renderMasterAdventureMap();
+    }
+
+    // =========================================================================
     // NAVIGASI TAB DENGAN ATURAN PRASYARAT MPI
     // =========================================================================
     function switchTab(tabId) {
@@ -2908,10 +4856,25 @@ export function generateStandaloneMpiHtml(
       audio.click();
       document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
       document.querySelectorAll('.section-view').forEach(sec => sec.classList.remove('active'));
-      
-      const tabIdx = tabId === 'materi' ? 0 : tabId === 'bermain' ? 1 : 2;
-      document.querySelectorAll('.tab-btn')[tabIdx].classList.add('active');
-      document.getElementById('view-' + tabId).classList.add('active');
+
+      if (tabId === 'dashboard') {
+        var btnD = document.getElementById('tabBtnDashboard');
+        if (btnD) btnD.classList.add('active');
+        var viewD = document.getElementById('view-dashboard');
+        if (viewD) viewD.classList.add('active');
+        updateDashboardUI();
+        renderMasterAdventureMap();
+      } else {
+        var btnOther = document.getElementById('tabBtn' + (tabId === 'materi' ? 'Materi' : tabId === 'bermain' ? 'Bermain' : 'Berlatih'));
+        if (btnOther) btnOther.classList.add('active');
+        var viewOther = document.getElementById('view-' + tabId);
+        if (viewOther) viewOther.classList.add('active');
+      }
+      try {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } catch(e) {
+        try { window.scrollTo(0, 0); } catch(err){}
+      }
     }
 
     // =========================================================================
@@ -3184,9 +5147,16 @@ export function generateStandaloneMpiHtml(
       if (pilihan === m.kuisMini.kunci) {
         if (completedBabIds.indexOf(activeMateriIdx) === -1) {
           completedBabIds.push(activeMateriIdx);
+          if (gamificationState.completedNodes.indexOf('materi_' + activeMateriIdx) === -1) {
+            gamificationState.completedNodes.push('materi_' + activeMateriIdx);
+            gamificationState.coins += 100;
+            gamificationState.xp += 50;
+            saveGamificationState();
+          }
         }
         audio.success();
         updateMpiProgressUI();
+        updateDashboardUI();
         renderMateriSidebar();
 
         const isLastBab = activeMateriIdx >= MATERI.length - 1;
@@ -3406,12 +5376,7 @@ export function generateStandaloneMpiHtml(
         triggerOfflineConfetti();
 
         if (Object.keys(jodohMatches).length === g.pasangan.length) {
-          if (!gameProgress[activeGameIdx]) {
-            gameProgress[activeGameIdx] = true;
-            completedGamesCount++;
-          }
-          renderGameNav();
-          updateMpiProgressUI();
+          markGameComplete(activeGameIdx);
           document.getElementById('jodohMsg').innerHTML = '<span style="color:var(--success); font-weight:800; display:inline-flex; align-items:center; gap:6px;">🎉 Luar Biasa! Seluruh pasangan Tebak Pasangan berhasil dicocokkan!</span>';
         } else {
           document.getElementById('jodohMsg').innerHTML = '<span style="color:#059669; font-weight:700;">✅ Pasangan Tepat! Lanjutkan ke pasangan berikutnya.</span>';
@@ -3468,12 +5433,7 @@ export function generateStandaloneMpiHtml(
       const correctCount = g.itemKlik.filter(i => i.benar).length;
       const clickedCorrect = document.querySelectorAll('.item-klik-card.clicked-correct').length;
       if (clickedCorrect === correctCount) {
-        if (!gameProgress[activeGameIdx]) {
-          gameProgress[activeGameIdx] = true;
-          completedGamesCount++;
-        }
-        renderGameNav();
-        updateMpiProgressUI();
+        markGameComplete(activeGameIdx);
         document.getElementById('klikStatusMsg').innerHTML = '<span style="color:var(--success);">🏆 Sempurna! Anda berhasil menemukan seluruh item yang tepat!</span>';
       }
     }
@@ -3521,12 +5481,7 @@ export function generateStandaloneMpiHtml(
       const fb = document.getElementById('urutFeedback');
       if (isMatch) {
         audio.success();
-        if (!gameProgress[activeGameIdx]) {
-          gameProgress[activeGameIdx] = true;
-          completedGamesCount++;
-        }
-        renderGameNav();
-        updateMpiProgressUI();
+        markGameComplete(activeGameIdx);
         fb.innerHTML = '<span style="color:var(--success);">🌟 Tepat Sekali! Urutan tahapan sudah sangat logis dan benar!</span>';
       } else {
         audio.error();
@@ -3564,12 +5519,7 @@ export function generateStandaloneMpiHtml(
       const totalCorrect = g.itemKumpul.filter(i => i.benar).length;
       const found = document.querySelectorAll('.kumpul-item.collected').length;
       if (found === totalCorrect) {
-        if (!gameProgress[activeGameIdx]) {
-          gameProgress[activeGameIdx] = true;
-          completedGamesCount++;
-        }
-        renderGameNav();
-        updateMpiProgressUI();
+        markGameComplete(activeGameIdx);
         document.getElementById('kumpulMsg').innerHTML = '<span style="color:var(--success);">🎯 Keren! Seluruh karakteristik yang dicari berhasil terkumpul!</span>';
       }
     }
@@ -3620,12 +5570,7 @@ export function generateStandaloneMpiHtml(
         selectedSebab = null;
 
         if (Object.keys(sambungMatches).length === g.rantaiLogika.length) {
-          if (!gameProgress[activeGameIdx]) {
-            gameProgress[activeGameIdx] = true;
-            completedGamesCount++;
-          }
-          renderGameNav();
-          updateMpiProgressUI();
+          markGameComplete(activeGameIdx);
           document.getElementById('sambungFeedback').innerHTML = '<span style="color:var(--success);">✨ Rantai logika tersambung dengan sangat utuh dan tepat!</span>';
         }
       } else {
@@ -3872,6 +5817,22 @@ export function generateStandaloneMpiHtml(
       const score = Math.round((correctCount / dtLatih.length) * 100);
       const isLulus = score >= CONFIG.kkm;
 
+      if (gamificationState.completedNodes.indexOf('asesmen_boss') === -1) {
+        gamificationState.completedNodes.push('asesmen_boss');
+        gamificationState.coins += 500;
+        gamificationState.xp += 300;
+        if (gamificationState.unlockedBadges.indexOf('b4') === -1) {
+          gamificationState.unlockedBadges.push('b4');
+        }
+        if (isLulus && gamificationState.unlockedBadges.indexOf('b5') === -1) {
+          gamificationState.unlockedBadges.push('b5');
+        }
+        gamificationState.level = Math.max(1, Math.floor(gamificationState.xp / 100) + 1);
+        saveGamificationState();
+        updateDashboardUI();
+        renderMasterAdventureMap();
+      }
+
       let predikat = 'D (Perlu Bimbingan / Remedial)';
       if (score >= 90) predikat = 'A (Sangat Memuaskan)';
       else if (score >= 75) predikat = 'B (Memuaskan)';
@@ -4010,14 +5971,36 @@ export function generateStandaloneMpiHtml(
     // =========================================================================
     // INITIALIZATION ON LOAD
     // =========================================================================
-    window.addEventListener('DOMContentLoaded', () => {
-      renderMateriSidebar();
-      renderMateriDetail();
-      renderGameNav();
-      renderGameContent();
-      renderLatihModule();
-      updateMpiProgressUI();
-    });
+    function initMpiApp() {
+      try { loadStudentState(); } catch(e){}
+      try { loadGamificationState(); } catch(e){}
+
+      // Pre-fill student inputs if previously saved
+      var inputNama = document.getElementById('inputGateNama');
+      var inputKelas = document.getElementById('inputGateKelas');
+      if (inputNama && currentStudent.nama) {
+        inputNama.value = currentStudent.nama;
+      }
+      if (inputKelas && currentStudent.kelas) {
+        inputKelas.value = currentStudent.kelas;
+      }
+
+      try { renderMateriSidebar(); } catch(e){}
+      try { renderMateriDetail(); } catch(e){}
+      try { renderGameNav(); } catch(e){}
+      try { renderGameContent(); } catch(e){}
+      try { renderLatihModule(); } catch(e){}
+      try { updateMpiProgressUI(); } catch(e){}
+      try { updateDashboardUI(); } catch(e){}
+      try { renderMasterAdventureMap(); } catch(e){}
+      try { switchTab('dashboard'); } catch(e){}
+    }
+
+    if (document.readyState === 'loading') {
+      window.addEventListener('DOMContentLoaded', initMpiApp);
+    } else {
+      initMpiApp();
+    }
   </script>
 </body>
 </html>`;

@@ -222,10 +222,31 @@ export default function App() {
 
   const handleNavigateToNode = (node: MapNode) => {
     if (node.type === 'materi') {
+      sound.playClick();
       setPreviewTab('materi');
     } else if (node.type === 'game') {
+      if (!isMateriCompleted) {
+        sound.playError();
+        setPrereqModalInfo({
+          title: 'Modul Bermain Terkunci!',
+          message: 'Sesuai aturan alur MPI: Anda harus menyelesaikan seluruh bab Modul Materi terlebih dahulu!',
+          targetActionTab: 'materi'
+        });
+        return;
+      }
+      sound.playClick();
       setPreviewTab('bermain');
     } else if (node.type === 'asesmen') {
+      if (!isMateriCompleted || !isBermainCompleted) {
+        sound.playError();
+        setPrereqModalInfo({
+          title: 'Modul Berlatih Terkunci!',
+          message: 'Sesuai aturan alur MPI: Anda harus menyelesaikan Modul Belajar (Materi) dan Modul Bermain terlebih dahulu!',
+          targetActionTab: isMateriCompleted ? 'bermain' : 'materi'
+        });
+        return;
+      }
+      sound.playClick();
       setPreviewTab('berlatih');
     }
   };
@@ -650,7 +671,17 @@ export default function App() {
                     completedGamesCount={completedGamesCount}
                     isMateriCompleted={isMateriCompleted}
                     isBermainCompleted={isBermainCompleted}
-                    onNavigateTab={(tab) => setPreviewTab(tab)}
+                    onNavigateTab={(tab) => {
+                      if (tab === 'bermain' && !isMateriCompleted) {
+                        handleShowPrerequisiteAlert('bermain');
+                        return;
+                      }
+                      if (tab === 'berlatih' && (!isMateriCompleted || !isBermainCompleted)) {
+                        handleShowPrerequisiteAlert('berlatih');
+                        return;
+                      }
+                      setPreviewTab(tab);
+                    }}
                     onOpenStudentGate={() => setIsStudentGateOpen(true)}
                     gamification={gamification}
                     onOpenShop={() => setIsShopOpen(true)}
